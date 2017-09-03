@@ -1,0 +1,37 @@
+﻿body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    /*background-color: #f1f1f1;*/
+    transition-property: all;
+    transition-duration: 0s;
+    transition-timing-function: ease-out;
+
+}
+
+
+a:hover,a:active{
+    text-decoration: none;
+}
+
+.login-btn{
+    background: #f04c22;
+    background: linear-gradient(to right,#fa7351, #f04c22);
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+    padding:10px;
+    border-radius: 5px;
+    display: block;
+    outline: none;
+}
+.login-btn:active{
+    box-shadow: 0px 0px 14px #ef4c22;
+}
+
+.nav a{
+    color: #9c9c9c;
+}
+
+.btn:active{
+    outline: none;
+}

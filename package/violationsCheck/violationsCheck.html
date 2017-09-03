@@ -1,0 +1,73 @@
+<div class="container_vc" ms-controller="violationsCheck">
+    <div class="vc-imgBox1">
+        <img style="width:120px;" src="./src/images/violationsCheck/iconfont-bmwzcx.png" alt=""/>
+        <span class="vc-spanText">川内违章查询 </span>
+    </div>
+
+    <div class="vc-content">
+        <label class="vc-font1">车牌号</label>
+
+        <div class="vc-font2"> 输入去掉“川”字的六位号码</div>
+        <div class="vc-font3">川</div>
+        <!-- 车牌号输入绑定-->
+        <div style="margin: 0 0 15px 0;">
+            <input ms-duplex="plateNumber" style="padding-left: 45px;" class="form-control vc-input1" type="text"
+                   maxlength="6" onchange="violationsCheck.upperCase()" placeholder="输入去掉川字的六位号码"/>
+        </div>
+        <i ms-if="plateInput_flag===1" class="icon-remove-sign vc-remove-1" ms-click="clearIpt1()"></i>
+        <!-- -->
+        <label class="vc-font1">车架号后六位</label>
+        <!-- 车架号输入绑定-->
+        <div style="margin: 0 0 15px 0;">
+            <input ms-duplex="VIN" style="padding-left: 10px;" class="form-control vc-input1" type="text"
+                   maxlength="6" placeholder="输入车架号后六位"/>
+        </div>
+        <i ms-if="VINInput_flag===1" class="icon-remove-sign vc-remove-2" ms-click="clearIpt2()"></i>
+
+        <div ms-if="state===0||state===2||state===3">
+            <button style="background: linear-gradient(90deg, #fa6f4c 0%, #f24820 100%);"
+                    class="btn btn-danger vc-btn-0" ms-click="checkFunc()">查询
+            </button>
+        </div>
+
+        <!-- 查询中...-->
+        <div ms-if="state===1">
+            <button style="background: linear-gradient(90deg, #fa6f4c 0%, #f24820 100%);"
+                    class="btn btn-danger vc-btn-0">查询中...
+            </button>
+        </div>
+        <div style="margin-top:10px; font-size: 40px;text-align: center;color: #dddddd;" ms-if="state===1">
+            <i class="icon-spinner icon-spin"></i>
+        </div>
+        <!-- 没有违章记录时-->
+        <div class="vc-smileFace" ms-if="state===2">
+            <img style="width:40px;margin-bottom: 10px" src="./src/images/violationsCheck/iconfont-smiley.png" alt=""/>
+            <span style="font-size:30px">没有违章记录</span>
+        </div>
+        <!-- 有违章记录时-->
+        <div style="margin-top: 30px" ms-if="state===3">
+            <h3><strong>违章记录：</strong></h3>
+
+            <div ms-repeat="list">
+                <table style="font-size: 16px;" class="table table-bordered table-responsive">
+                    <tr>
+                        <td colspan="2" style="background: #e8e8e8;">&nbsp;{{el.wfxw}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;时间：<br/>&nbsp;{{el.wfsj}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;地点：<br/>&nbsp;{{el.wfdz}}</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;罚款：&nbsp;¥&nbsp;{{el.fkje}}</td>
+                        <td>&nbsp;扣分：{{el.jf}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;处理单位：<br/>&nbsp;{{el.cjjgmc}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

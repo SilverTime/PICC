@@ -1,0 +1,132 @@
+<!--后台管理-->
+<!DOCTYPE html>
+<html>
+<head ms-controller="head">
+    <title id="title">PICC</title>
+    <meta content="PICC 中国人保" name="Description">
+    <meta content="PICC" name="Keywords">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--坑爹的将360默认为极速模式打开-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--avalon-->
+    <script src="./src/js/avalon.modern.1.5.min.js"></script>
+    <link href="./src/css/bootstrap-all.css" rel="stylesheet" type="text/css"/>
+    <!--fontAwesone 引入-->
+    <link href="./src/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!--本地CSS-->
+    <link href="./src/css/local.css" rel="stylesheet">
+    <style>
+        [ms-controller] {
+            visibility: hidden
+        }
+
+        .now > a {
+            font-weight: bold;
+            color:#000
+        }
+        .now{
+            background-color: #ededed;
+        }
+
+        #childNav {
+            border-right: 1px solid #DCDCDC;
+            margin: 2% 0 0 0;
+            border: 0;
+            text-align: center;
+            height: 100%;
+            font-size: 1.4em;
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-shadow: 0 1px 2px #b0b0b0;
+        }
+
+        .nav > li > a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 15px;
+        }
+
+        #childNav a{
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body ms-controller="admin">
+<!-- topNav-->
+<nav class="navbar navbar-default" style="margin-bottom:0;">
+    <div class="container">
+        <div >
+            <ul class="nav nav-pills">
+                <li>
+                    <span class="navbar-brand">
+                        <img src="./src/images/logo.png" alt="" style="height: 206%;margin-left:19px;margin-top:-10px;"/>
+                    </span>
+                </li>
+                <li ms-repeat="topNav" ms-class="now:nowTop==$index" >
+                    <a ms-click="toggleLeftNav($index)" ms-if="el.hidden!=true&&el.hiddenRoleID!=RoleID"
+                       style="padding:10px 20px;font-size: 1.5em">
+                        {{el.name}}
+                    </a>
+                </li>
+                <li class="pull-right">
+                    <span style="padding:10px ;font-size: 14px;line-height: 30px">{{un}}</span>
+                    <a ms-click="logout" style="padding:10px ;font-size: 14px;line-height: 30px">登出</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+<div class="container">
+        <!--leftNav-->
+        <div class="row">
+            <div class="col-md-2 ">
+                <nav id="childNav" class="navbar navbar-default  ">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li ms-repeat="showingLeftNav" role="presentation" ms-class="now:nowLeft==$index">
+                            <a ms-attr-href="el.href" ms-if="!el.hidden==true" font-style="font-family:'应用字体 Bold', '应用字体';">
+                                {{el.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-10">
+
+            {{html|html}}
+
+        </div>
+        </div>
+
+
+</div>
+<div>
+    {{login|html}}
+</div>
+<div>
+    <!--<tsy:ws config="$optc"></tsy:ws>-->
+    <tsy:progressbar config="$optd"></tsy:progressbar>
+    <tsy:tip config="$opta"></tsy:tip>
+    <!--<tsy:modal config="$optb" id="modal"></tsy:modal>-->
+    <!--<tsy:totop config="$optTop"></tsy:totop>-->
+</div>
+
+
+<script src="./plugins/cache/cache.js"></script>
+<!--<sccipr src="./plugins/door/door.js"></sccipr>-->
+<script src="plugins/call/call.mobile.v2.js"></script>
+<script src="./admin.js"></script>
+<script src="./plugins/isIt/isIt.js"></script>
+</body>
+</html>

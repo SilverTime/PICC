@@ -1,0 +1,97 @@
+<!--会员资料详情-->
+<div class="userDetails1" ms-controller="infoDetails">
+    <div class="row row1">
+        <div class="col-md-12">微信资料</div>
+    </div>
+    <div class="row row1">
+        <div class="col-md-2">
+            <img src="./src/images/user/u15.png" class="img2"/>
+        </div>
+        <div class="col-md-3">
+            微信昵称：{{info.WechatNickName}}<br/>
+            微信号：{{info.WechatID}}<br/>
+            OpenID：{{info.OpenID}}<br/>
+        </div>
+        <div class="col-md-3">
+            元宝总数量：{{info.TotalMoney}}<br/>
+            使用量：{{info.ConsumeMoney}}<br/>
+            剩余量：{{info.BalanceMoney}}<br/>
+        </div>
+        <div class="col-md-3">
+            龙宝编号：{{info.ClubNumber}}<br/>
+            活动参加次数：<br/>
+            累计签到天数：{{SignCount}}<br/>
+        </div>
+    </div>
+    <div class="row row1">
+        <div class="col-md-2" style="padding-top: 1%;">基本信息</div>
+        <div class="col-md-10"><hr class="hr"/></div>
+    </div>
+    <div class="row row1">
+        <div class="col-md-6">
+            被保人：&nbsp;&nbsp;<span>{{info.Name}}</span><br/>
+            身份证号：&nbsp;&nbsp;<span>{{info.IDCard}}</span><br/>
+            俱乐部编号：&nbsp;&nbsp;<span>{{info.ClubID}}</span><br/>
+        </div>
+        <div class="col-md-6">
+            地址：&nbsp;&nbsp;<span>{{info.Address}}</span><br/>
+            会员等级：&nbsp;&nbsp;<span>{{info.UserLevel}}</span><br/>
+            性别：&nbsp;&nbsp;<span ms-if="info.Sex==1">男</span><span ms-if="info.Sex!=1">女</span><br/>
+        </div>
+    </div>
+
+    <div class="row row1">
+        <div class="col-md-3" style="padding-top: 1%;">家自车基础信息</div>
+        <div class="col-md-9"><hr class="hr"/></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <span>{{info.CarName}}</span>
+        </div>
+    </div>
+    <div class="row" ms-repeat="info.Car">
+        <div class="col-md-6">
+            车牌号码：&nbsp;&nbsp;<span>{{el.CarID}}</span><br/>
+            VIN码：&nbsp;&nbsp;<span>{{el.VIN}}</span><br/>
+        </div>
+        <div class="col-md-6">
+            新车购置价格：&nbsp;&nbsp;<span>{{el.CarPrice}}</span><br/>
+            实际使用年数：&nbsp;&nbsp;<span>{{el.UseYears}}</span><br/>
+        </div>
+    </div>
+
+    <div class="row row1">
+        <div class="col-md-2" style="padding-top: 1%;">承保信息</div>
+        <div class="col-md-10"><hr class="hr"/></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            当前状态：&nbsp;&nbsp;<span>{{info.UserState}}</span><br/>
+            保单号：&nbsp;&nbsp;<span>{{info.PolicyID}}</span><br/>
+            承保商业险金额：&nbsp;&nbsp;<span>{{info.BusinessMoney}}</span><br/>
+            推荐送修代码：&nbsp;&nbsp;<span>{{info.RepairCode}}</span><br/>
+        </div>
+        <div class="col-md-6">
+            归属机构：&nbsp;&nbsp;<span>{{info.Ownership}}</span><br/>
+            商业险起保日期：&nbsp;&nbsp;<span>{{info.BusinessStart}}</span><br/>
+            承保保单金额：&nbsp;&nbsp;<span>{{info.AcceptInsurMoney}}</span><br/>
+            <br/>
+        </div>
+    </div>
+
+    <div class="row row1">
+        <div class="col-md-2" style="padding-top: 1%;">理赔信息(无法计算相关信息，只能提供理赔历史，未知上年赔款等信息)</div>
+        <div class="col-md-10"><hr class="hr"/></div>
+    </div>
+    <div class="row row1">
+        <div class="col-md-4">
+            商业险上年赔款<span>{{info.LastClaimsCount}}</span>次
+        </div>
+        <div class="col-md-4">
+            连续<span>{{info.NoInsurTime}}</span>年未出险
+        </div>
+        <div class="col-md-4">
+            商业险本年赔款<span>{{info.BusinessCount}}</span>次
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="con_1" ms-controller="members">
+    <div class="addId">
+        <a ms-attr-href="'#!/addAccount/0'" style=" text-decoration:none;color:#fff;">
+            <button style="width:128px" class="btn btn-danger">新增账号</button>
+        </a>
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="col-md-10">-->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th style="width:179px">员工姓名</th>
+                    <th style="width:179px">登陆账号</th>
+                    <th style="width:179px">角色权限</th>
+                    <th style="width:180px">添加时间</th>
+                    <th> 操作</th>
+                </tr>
+                </thead>
+                <tr ms-repeat="list">
+                    <td>{{el.UserName}}</td>
+                    <td>{{el.LogAccount}}</td>
+                    <td>{{el.Role[0].RoleName}}</td>
+                    <td>{{el.CreateTime*1000| date("yyyy-MM-dd HH:mm")}}</td>
+                    <td>
+                        <a ms-attr-href="'#!/resetPassword/'+el.UserID" style="text-decoration: none;">重置密码</a>&nbsp;
+                        <a ms-attr-href="'#!/changeInfo/'+el.UserID" style="text-decoration: none;">修改信息</a><br />
+                        <a ms-attr-href="'#!/changeActor/'+el.UserID" style="text-decoration: none;"> 修改角色</a>&nbsp;
+                        <a ms-attr-href="'#!/delectAccount/'+el.UserID" style="text-decoration: none;">删除账号</a>
+                    </td>
+                </tr>
+            </table>
+    <tsy:pager config="$opt"></tsy:pager>
+</div>
+    <!--</div>-->
+<!--</div>-->

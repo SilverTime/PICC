@@ -1,0 +1,72 @@
+<div class="container_3" ms-controller="userInfo">
+    <div id="user-head" style="">
+    </div>
+    <!-- 头部的头像和签到次数-->
+    <div align="center" class="pull-left" style="margin-left: 21px;">
+        <img id="u17_img" ms-attr-src="headimgurl"/>
+        <br/>
+
+        <div class="userinfo-qian-dao">
+            累计签到{{SignCount}}次
+        </div>
+    </div>
+
+    <div class="user-lv">
+        <div class="user-name">
+            {{info.Name}}
+        </div>
+
+<!--头部的星级用户和元宝-->
+        <div style="padding-left: 140px;padding-top: 35px;">
+            <div ms-if="uid!=0">
+                <div class="userinfo-xing">
+                    您目前是{{info.UserLevel}}星用户
+
+                    <div style="color:#fdc502;font-size: 21px;">
+                        {{lvStar|html}}
+
+                    </div>
+
+                </div>
+            </div>
+            <div ms-if="uid==0">
+                <div class="userinfo-xing">
+                    您目前是3星用户
+
+                    <div style="color:#fdc502;font-size: 1.4em;">
+                        {{lvStar|html}}
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="userinfo-yuan-box" ms-if="info.BalanceMoney>0">
+                我的元宝
+                <div class="userinfo-yuan-bao">
+                    <img src="./src/images/userInfoimgs/user-yuanba004.png" alt=""
+                         style="height:18px;margin-bottom: 1px;"/>
+            <span ms-if="info.BalanceMoney">
+            {{info.BalanceMoney}}
+            </span>
+            <span ms-if="!info.BalanceMoney">
+            0
+            </span>
+
+                </div>
+            </div>
+            <div class="clearfloat"></div>
+        </div>
+        <!-- 下面的列表-->
+        <div id="userinfo_bg">
+            <div class="user-block" ms-repeat="blocks">
+                <a ms-attr-href="el.href">
+                    <img ms-attr-src="el.icon" alt=""/>
+                    <br/>
+                    <span>{{el.name}}</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

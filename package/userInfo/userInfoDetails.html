@@ -1,0 +1,42 @@
+<div ms-controller="userInfoDetails" style="background-color: #fdfdfe">
+    <div class="user-d-label">
+        <img src="./src/images/userInfoimgs/userD_03.png" alt=""/>
+        &nbsp;姓名
+        <span class="pull-right" style="color: #282828;">
+            {{info.Name}}
+        </span>
+    </div>
+    <div class="user-d-fen"></div>
+    <div class="user-d-label">
+        <img src="./src/images/userInfoimgs/userD_06.png" alt=""/>
+        &nbsp;手机号
+        <span class="pull-right" style="color: #282828;">
+            {{info.WeChatPhone}}
+        </span>
+    </div>
+    <div class="user-d-fen"></div>
+    <div class="user-d-label">
+        <img src="./src/images/userInfoimgs/userD_09.png" alt=""/>
+        &nbsp;证件号
+        <span class="pull-right" style="color: #282828;">
+            {{info.IDCard}}
+        </span>
+    </div>
+    <div ms-repeat="info.Car">
+        <div class="user-d-fen"></div>
+        <div class="user-d-label">
+            <img src="./src/images/userInfoimgs/userD_13.png" alt=""/>
+            &nbsp;车牌号
+        <span class="pull-right" style="color: #282828;">
+            {{el.CarID}}
+        </span>
+        </div>
+    </div>
+
+
+    <div class="user-d-footer">
+        <button ms-click="logout">
+            退出登录
+        </button>
+    </div>
+</div>

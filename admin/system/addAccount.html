@@ -1,0 +1,46 @@
+<div  ms-controller="addAccount">
+    <h2>新增账号</h2>
+    <hr/>
+    <div class="row">
+        <div class="col-sm-4">
+            登陆账号：
+            <input type="text" class="form-control" ms-duplex="LogAccount"/>
+            <br/>
+        </div>
+        <div class="col-sm-4">
+            登陆密码：
+            <input type="password" class="form-control" ms-duplex="PWD"/>
+            <br/>
+        </div>
+        <div class="col-sm-4">
+            重复密码：
+            <input type="password" class="form-control" ms-duplex="rePWD"/>
+            <br/>
+        </div>
+        <div class="col-sm-4">
+            员工姓名：
+            <input type="text" class="form-control" ms-duplex="Name"/>
+            <br/>
+        </div>
+        <div class="col-sm-4">
+            手机号：
+            <input type="text" class="form-control" ms-duplex="Phone"/>
+            <br/>
+        </div>
+        <div class="col-sm-4">
+            角色：
+            <select class="form-control" id="" ms-duplex="Role">
+                <option value="">选择角色</option>
+                <option ms-attr-value="$key" ms-repeat="Roles">{{$val}}</option>
+            </select>
+            <br/>
+        </div>
+        <div class="col-sm-6">
+            <button class="btn btn-danger btn-block" ms-click="putAccount">确认添加</button>
+        </div>
+        <div class="col-sm-6">
+            <button class="btn btn-default btn-block" ms-click="cancelFun">取消</button>
+        </div>
+
+    </div>
+</div>

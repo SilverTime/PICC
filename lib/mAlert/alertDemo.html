@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自定义弹框组件</title>
+    <script src="../../src/js/avalon.modern.1.5.min.js"></script>
+</head>
+<body ms-controller="alertDemo">
+<button onclick="alert_1.appear()">弹出</button>
+<tsy:malert config="$opt"></tsy:malert>
+<script>
+    avalon.ready(function () {
+        require(["../../lib/mAlert/mAlert.js"],function() {
+            var vm;
+            vm = avalon.define({
+                $id: "alertDemo",
+                $opt: {
+                    id: "alert_1",
+                    btn: [
+                        {
+                            name: "我知道了",
+                            onClick: function () {
+                                alert_1.disappear()
+                            }
+                        },
+                        {
+                            name: "我知道了2",
+                            onClick: function () {
+                                alert_1.disappear()
+                            }
+                        }
+                    ],
+                    subtitle:[
+                        " 机动车行驶证正副页"
+
+                    ],
+                    extraTitle:[
+                        "反应车辆与物体的碰撞部位",
+
+                    ],
+                    content:'<img class="img-box" src="../../src/images/carImgs/car1.png" /><img class="img-box" src="../../src/images/carImgs/car1.png" />'
+                }
+
+            });
+            avalon.scan()
+        })
+    })
+</script>
+</body>
+</html>

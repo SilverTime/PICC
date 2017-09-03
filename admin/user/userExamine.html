@@ -1,0 +1,53 @@
+<br/>
+<!--用户信息表格-->
+<div class="row active upInfo1" ms-controller="userExamine">
+    <!--<div class="col-md-1"style="visibility:hidden">col-md-1</div>-->
+    <div class="row">
+
+        <div class="col-sm-2">
+            注册日期：
+            <input type="date" class="form-control" style="margin-bottom: 10px" ms-duplex="time1"/>
+        </div>
+        <div class="col-sm-2">
+            至
+            <input type="date" class="form-control" style="margin-bottom: 10px" ms-duplex="time2"/>
+        </div>
+
+        <div class="col-sm-2">
+            <br/>
+            <button class="btn btn-default btn-block " ms-click="outUser">导出审核历史</button>
+        </div>
+    </div>
+    <hr/>
+    <div>
+        <table class="table table-striped t1">
+            <thead>
+            <tr>
+
+                <th>姓名</th>
+                <th>微信手机号</th>
+                <th>身份证号</th>
+                <th>数据状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ms-repeat="list">
+
+                <td>{{el.Name}}</td>
+                <td>{{el.WeChatPhone}}</td>
+                <td>{{el.IDCard}}</td>
+                <td style="color: red;">
+                    <span ms-if="el.UserState==0">未检测</span>
+                    <span ms-if="el.UserState==1">不同步</span>
+                    <span ms-if="el.UserState==2">已同步</span>
+                    <span ms-if="el.UserState==3">已通过</span>
+                    <span ms-if="el.UserState==4">未通过</span>
+                </td>
+                <td><a ms-attr-href="'#!/userDetails/'+el.MemberID">详情</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <tsy:pager config="$opt"></tsy:pager>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+<!--新增商家-->
+<div class="newMerchant1" ms-controller="newMerchant">
+    <div style="font-size: 1.2em;">
+        <span ms-if="SellerID>0">修改</span>
+        <span ms-if="SellerID==0">新增</span>
+        {{objName}}
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-sm-4">
+            <div>
+                * {{objName}}名称
+            </div>
+            <input class="form-control" ms-duplex="info.SellerName" style="width: 100%"/>
+            <br/>
+
+        </div>
+        <div class="col-sm-4">
+            <div>
+                * 类型
+            </div>
+
+            <div class="btn-group btn-group-sm" role="group" >
+                <button ms-repeat="businessType" ms-click="selectType($index)" ms-class="btn-primary:el.id==nowType"
+                        class="btn btn-default ">
+                    {{el.name}}
+                </button>
+
+            </div>
+            <br/>
+        </div>
+        <div class="col-sm-4">
+            <div>
+                *  区域：       四川省&nbsp;&nbsp;绵阳市&nbsp;&nbsp;
+            </div>
+
+
+            <select ms-duplex="info.AreaID" class="form-control">
+                <option ms-attr-value="el.id" ms-repeat="area">{{el.name}}</option>
+            </select>
+            <br/>
+        </div>
+
+        <div class="col-sm-12">
+
+            <div>
+                *   {{objName}}封面
+            </div>
+
+            <img class="img-responsive" ms-attr-src="picUrl" alt="" ms-visible="picUrl!=''||picUrl!=undefined"/>
+            <br/>
+            <br/>
+            <tsy:uploader config="$opt2"></tsy:uploader>
+        </div>
+
+        <div class="col-sm-6">
+            <div>
+                *   联系电话
+            </div>
+            <input class="form-control" ms-duplex="info.Phone"/>
+            <br/>
+        </div>
+        <div class="col-sm-6">
+            <div>
+                * 详细地址
+            </div>
+            <input class="form-control" ms-duplex="info.Address"/>
+            <br/>
+        </div>
+        <div class="col-sm-5">
+            <div>
+                * 营业时间
+            </div>
+            <input class="form-control" ms-duplex="info.WorkTime"/>
+            <br/>
+        </div>
+        <!--<div class="col-sm-5">-->
+            <!--<div>-->
+                <!--*  {{objName}}管理员账号：-->
+            <!--</div>-->
+            <!--<input class="form-control" ms-duplex="info.AdministratorID"/>-->
+            <!--<br/>-->
+        <!--</div>-->
+        <div class="col-sm-2">
+            <div>
+                *  {{objName}}星级：
+            </div>
+            <span style="color: #f7e800;font-size: 25px">
+                <tsy:star config="$opt"></tsy:star>
+            </span>
+        </div>
+        <div class="col-sm-12" ms-visible="nowType==3">
+            <div>
+                * 活动介绍
+            </div>
+            <tsy:mdeditor config="$md"></tsy:mdeditor>
+            <br/>
+        </div>
+    </div>
+
+    <button class="btn btn-block btn-danger" ms-click="add" ms-if="SellerID==0">添加</button>
+    <button class="btn btn-block btn-danger" ms-click="save" ms-if="SellerID>0">保存</button>
+</div>

@@ -1,0 +1,124 @@
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="height:400px"></div>
+<!-- ECharts单文件引入 -->
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script type="text/javascript">
+    // 路径配置
+    require.config({
+        paths: {
+            echarts: 'http://echarts.baidu.com/build/dist'
+        }
+    });
+
+    // 使用
+    require(
+            [
+                'echarts',
+                'echarts/chart/pie' // 使用柱状图就加载pie模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main'));
+
+                var option = {
+                    title: {
+                        text: "商家消费占比",
+                        x: "center"
+                    },
+                    tooltip: {
+                        trigger: "item",
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: "vertical",
+                        x: "left",
+                        data: ["涪城", "安县", "盐亭", "游仙", "北川", "江油", "高新", "平武", "科创园区", "经开区", "梓潼", "科学城", "三台"]
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            mark: {
+                                show: true
+                            },
+                            dataView: {
+                                show: true,
+                                readOnly: true
+                            },
+                            restore: {
+                                show: true
+                            },
+                            saveAsImage: {
+                                show: true
+                            }
+                        }
+                    },
+                    calculable: true,
+                    series: [
+                        {
+                            name: "商家消费占比",
+                            type: "pie",
+                            radius: "55%",
+                            center: ["50%", "60%"],
+                            data: [
+                                {
+                                    value: 1,
+                                    name: "涪城"
+                                },
+                                {
+                                    value: 10,
+                                    name: "安县"
+                                },
+                                {
+                                    value: 12,
+                                    name: "盐亭"
+                                },
+                                {
+                                    value: 15,
+                                    name: "游仙"
+                                },
+                                {
+                                    value: 13,
+                                    name: "北川"
+                                },
+                                {
+                                    value: 20,
+                                    name: "江油"
+                                },
+                                {
+                                    value: 22,
+                                    name: "高新"
+                                },
+                                {
+                                    value: 15,
+                                    name: "平武"
+                                },
+                                {
+                                    value: 56,
+                                    name: "科创园区"
+                                },
+                                {
+                                    value: 20,
+                                    name: "经开区"
+                                },
+                                {
+                                    value: 30,
+                                    name: "梓潼"
+                                },
+                                {
+                                    value: 40,
+                                    name: "科学城"
+                                },
+                                {
+                                    value: 11,
+                                    name: "三台"
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+                // 为echarts对象加载数据
+                myChart.setOption(option);
+            }
+    );
+</script>

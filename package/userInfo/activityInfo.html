@@ -1,0 +1,51 @@
+<div ms-controller="activityInfo" style="padding:10px;position: relative;background: #FAFAFA;overflow: hidden">
+
+    <div style="font-size: 40px;text-align: center;color: #dddddd;" ms-if="list.length==0&&state==0">
+        正在查找活动……
+    </div>
+
+    <div  ms-repeat="list"
+         style="position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #979797;
+    border-radius: 6px;
+
+    box-shadow: 0px 2px 4px #DDDDDD;
+    background-color: #ffffff">
+        <div style="overflow: hidden;position: relative">
+            <a ms-attr-href="#!/activityInfo/{{el.ActivityID}}" style="background-color: #000000;display: block;">
+                <img ms-attr-src="el.TopPic" alt="" style="width: 100%;" ms-class="dark:el.ActivityState==3"/>
+            </a>
+
+            <div style="font-size: 14px;padding: 10px 20px">
+                {{el.beforOver|html}}
+            </div>
+
+        </div>
+        <!--<div style="position: absolute;top: -19px; right: -12px;" ms-if="el.ActivityState==3">-->
+            <!--<img src="./src/images/over.png" alt="" width="76px"/>-->
+        <!--</div>-->
+
+
+
+    </div>
+
+    <div ms-if="state==1">
+        <!--<div style="height: 500px;background-color: royalblue">-->
+        <img ms-attr-src="info.InPic" alt="" style="width: 100%" ms-class="dark:info.ActivityState==3"/>
+
+        <button class="login-btn" style="margin-top: -4px;height: 60px;font-size: 20px;"
+                onclick="activityInfo.enroll() " ms-if="info.ActivityState!=3">
+            立即报名
+        </button>
+
+        <button class="login-btn" style="margin-top: -4px;height: 60px;font-size: 20px;" ms-if="info.ActivityState==3">
+            已结束
+        </button>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <tsy:malert config="$alert2"></tsy:malert>
+</div>

@@ -1,0 +1,28 @@
+.tsy-pager>div{
+    float: left;
+    margin:5px;
+    cursor: pointer;
+}
+
+.tsy-pager-pre,.tsy-pager-now{
+    color: #d71e06;
+}
+.tsy-pager-list,.tsy-pager-pre{
+    padding: 3px
+}
+
+.tsy-pager-list{
+    border: 1px solid #dddddd;
+    text-align: center;
+    min-width: 20px;
+}
+
+ .tsy-pager-now{
+     border-color: transparent;!important;
+}
+
+ .tsy-pager-t{
+     color: #aaa;
+     font-size: 50%;
+     line-height: 25px;
+ }

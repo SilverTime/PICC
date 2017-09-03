@@ -1,0 +1,59 @@
+<div ms-controller="spendList">
+
+    <div class="text-center" ms-if="list.length==0">
+
+        <h2>还没有消费记录……</h2>
+        <a href="#!/mallList/0">去商城看看</a>
+    </div>
+
+    <a ms-attr-href="'#!/spendInfo/'+el.OrderID" ms-repeat="list"><!--消费详情：已使用-->
+
+        <div class="sl-i" ms-class="hl:el.OrderState==0">
+             <span class="pull-right">
+          <img ms-if="el.OrderState==0" src="./src/images/userInfoimgs/yuanBao.png" alt=""
+               style="height: 22px;margin-top: -5px;"/>
+           <img ms-if="el.OrderState!=0" src="./src/images/mall/yuanBao-hui.png" alt=""
+                style="height: 22px;margin-top: -5px;"/>
+           {{el.PayMoney}}
+       </span>
+
+            <div>
+                {{el.GoodsName}}
+            </div>
+            <div ms-if="el.OverdueTime>0">
+                有效期至
+                {{el.OverdueTime*1000|date('yyyy年MM月dd日')}}
+            </div>
+            <div class="sl-i-footer">
+            <span class="sl-badge pull-right" ms-class="sl-b-{{el.OrderState}}">
+                <span ms-if="el.OrderState==0">
+                    待消费
+                </span>
+                <span ms-if="el.OrderState==1">
+                    已消费
+                </span>
+                <span ms-if="el.OrderState==2">
+                    已过期
+                </span>
+            </span>
+            <span ms-if="el.Address!=''">
+                <i class="icon-map-marker"></i>
+                {{el.Address}}
+            </span>
+
+            </div>
+        </div>
+
+
+    </a>
+
+    <div style="padding:15px" ms-if="list.length<T">
+        <button ms-click="OrderGet" class="login-btn">
+            加载更多
+            <small>(还有{{T-list.length}}条记录)</small>
+        </button>
+    </div>
+
+</div>
+
+

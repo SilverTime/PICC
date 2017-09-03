@@ -1,0 +1,109 @@
+<!--新增主题页-->
+<div class="atm-margin" ms-controller="addMonthTheme">
+    <div class="row atm-margin">
+        <div class="col-md-12">
+            <span class="atm-t">封面标题</span><br/>
+            <input type="text" name="title" class="form-control" style="width: 70%;" ms-duplex="info.ActivityName"/>
+        </div>
+    </div>
+    <div class="row atm-margin">
+        <div class="col-md-6">
+            <span class="atm-t">封面</span><br/>
+            <img ms-attr-src="TopPic" class="img-thumbnail amt-topPic" ms-if="TopPic.length>0"/><br/><br/>
+            <!--<div id="box1" style="height:200px" >-->
+            <tsy:uploader config="$opt2"></tsy:uploader>
+            <!--</div>-->
+            <span>建议png格式图片，图片建议750px*400px</span>
+        </div>
+        <div id="box2" class="col-md-6">
+            <span class="atm-t">详情图片</span><br/>
+            <img ms-attr-src="InPic" class="img-thumbnail amt-inPic" ms-if="InPic.length>0"/><br/><br/>
+            <tsy:uploader config="$opt3"></tsy:uploader>
+            <span>建议png格式图片，图片建议750px*1080px</span>
+        </div>
+    </div>
+    <div class="row atm-margin">
+        <div class="col-md-6">
+            <span style="color: red;">*</span><span class="atm-t">报名截止日期</span><br/>
+            <input type="date" name="title" class="form-control" style="width: 45%;" ms-duplex="time"/>
+            <span style="color: red;">报名开始日期为发布有效期</span>
+        </div>
+        <div class="col-md-6">
+            <span style="color: red;">*</span><span class="atm-t">报名上限</span><br/>
+            <input type="text" name="title" class="form-control" style="width: 45%;" ms-duplex="info.RegMax"/>
+
+        </div>
+    </div>
+    <div class="row pull-right atm-margin">
+        <input type="button" name="" value="保存" class="btn btn-default amt-save-btn" ms-click="save(1)"/>
+        <input type="button" name="" value="发布" class="btn btn-danger amt-sign-btn" ms-click="save(2)"/>
+
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="con_1">-->
+    <!--<div class="inner-left col-md-6">-->
+        <!--<h2>添加活动</h2>-->
+
+        <!--<h3 style="display: inline-block;">封面主题</h3>-->
+        <!--<input style="text-overflow:ellipsis" type="text"/>-->
+
+        <!--<h3 style="margin-bottom: 0">封面</h3>-->
+        <!--<a class="a-img-face"><img src="./src/images/system/u56.png"/> </a>-->
+
+        <!--<h4>建议png格式图片，图片建议750px*400px</h4>-->
+
+        <!--<h3 style="margin-bottom: 0">详情图片</h3>-->
+        <!--<a class="a-img-details"><img src="./src/images/system/u56.png"/> </a>-->
+
+        <!--<h4>建议png格式图片，图片建议750px*1080px</h4>-->
+
+        <!--<h3 style="display: inline-block;">报名截止日期</h3>-->
+        <!--<input style="text-overflow:ellipsis" type="text"/>-->
+        <!--<h4 style="color:#fd0001">报名开始日期为发布有效期</h4>-->
+
+        <!--<h3 style="display: inline-block;">报名上限</h3>-->
+        <!--<input style="text-overflow:ellipsis" type="text"/>-->
+        <!--<br/>-->
+        <!--<button class="aMT-btn">保存</button>-->
+        <!--&nbsp;&nbsp;&nbsp;-->
+        <!--<button class="aMT-btn">发布</button>-->
+    <!--</div>-->
+    <!--<div class="inner-right col-md-6">-->
+        <!--<h2>进行中或已结束活动</h2>-->
+
+        <!--<div style="overflow-y: scroll;height:700px">-->
+            <!--<h3>爱遇新年</h3>-->
+            <!--<img src="./src/images/system/u82.png"/>-->
+            <!--<br/>-->
+            <!--<br/>-->
+            <!--<img src="./src/images/system/u60.jpg"/>-->
+            <!--<h3 style="color:#e7380e">进行中</h3>-->
+            <!--<div class="action-ing-text">-->
+                <!--<span style="margin-right: 50px">报名日期</span><span>2015-12-01&nbsp;至&nbsp;2015-12-02</span>-->
+                <!--<br/>-->
+                <!--<span style="margin-right: 50px">报名上限</span><span>500人，当前已有20人报名</span>-->
+                <!--<br/>-->
+                <!--<a>报名详情查看</a>-->
+                <!--<br/>-->
+                <!--<span>地址链接：</span><a href="www.scmypicc.com/zhutiyue/page1">www.scmypicc.com/zhutiyue/page1</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

@@ -1,0 +1,21 @@
+<!--商品详情-->
+
+<!--进行中-->
+<div class="goodsDetail1" ms-controller="goodsDetail">
+    <div style="margin-left: 10%;"><span style="font-size: 1.4em;">{{info.Seller.SellerName}}</span>——{{info.GoodsName}}</div><br/>
+    <span>已售出金额：</span><span>{{info.SaleCount*info.Price}}龙宝/¥{{info.SaleMoney}}</span><br/>
+    <span>已售出数量/总数量：</span><span>{{info.SaleCount}}/{{info.Total}}</span><br/>
+    <span>当前状态：</span>
+        <span style="color: #4ba41e;" ms-if="info.GoodsState==0">未审核</span>
+        <span style="color: #4ba41e;" ms-if="info.GoodsState==1">未通过</span>
+        <span style="color: #4ba41e;" ms-if="info.GoodsState==2">未发布</span>
+        <span style="color: #4ba41e;" ms-if="info.GoodsState==3">已下架</span>
+        <span style="color: #4ba41e;" ms-if="info.GoodsState==4">已上架</span>
+    <br/>
+    <span>有效期：</span><span>{{info.EffectDate}}至{{info.OverdueDate}}</span><br/>
+    <span>审核人：</span><span>{{info.ExamineName}}</span><br/>
+    <span>审核时间：</span><span>{{info.PassDate}}</span><br/>
+    <span>单个用户最大购买个数上限：</span><span ms-if="info.BuyMax==0">无上限</span><span ms-if="info.BuyMax!=0">{{info.BuyMax}}</span><br/><br/>
+    <input type="button" name="return" value="返回" class="returnBtn1" onclick="window.history.back()"/>
+    <a class="outBtn" ><img src="./src/images/mall/u203.png" style="width: 25px; height: 25px;" />下架</a>
+</div>

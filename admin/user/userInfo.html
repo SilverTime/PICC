@@ -1,0 +1,76 @@
+
+
+<!--用户信息表格-->
+<div class=" active upInfo1" ms-controller="userInfo">
+    <br/>
+    <div class="row">
+        <div class="col-sm-4">
+            用户名：
+            <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="w.Name"/>
+
+        </div>
+        <div class="col-sm-4">
+            手机号：
+            <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="w.Phone"/>
+        </div>
+        <div class="col-sm-4">
+            车牌号：
+            <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="w.CarID"/>
+        </div>
+        <div class="col-sm-4">
+            审核日期：
+            <input type="date" class="form-control" style="margin-bottom: 10px" ms-duplex="time1"/>
+        </div>
+        <div class="col-sm-4">
+            至
+            <input type="date" class="form-control" style="margin-bottom: 10px" ms-duplex="time2"/>
+        </div>
+        <!--todo 暂时没有用户地区，所以先注释了，后面修改了需求之后再说-->
+        <!--<div class="col-sm-3">-->
+            <!--地区-->
+            <!--<select ms-duplex="w.AreaID" class="form-control">-->
+                <!--<option value="">全部地区</option>-->
+                <!--<option ms-attr-value="el.id" ms-repeat="area">{{el.name}}</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--<div class="col-sm-2">-->
+            <!--<br/>-->
+            <!--<a class="btn btn-danger btn-block " ms-attr-href="#!/userInfo/{{P}}">搜索</a>-->
+
+        <!--</div>-->
+        <div class="col-sm-4">
+            <br/>
+            <button class="btn btn-danger btn-block " ms-click="outUser">导出</button>
+        </div>
+    </div>
+    <hr/>
+    <div>
+        <table class="table table-striped t1">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>身份证号</th>
+
+                <th>手机号</th>
+                <th>车牌号</th>
+                <th>元宝余额</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ms-repeat="list">
+                <td>{{el.Name}}</td>
+                <td>{{el.IDCard}}</td>
+
+                <td>{{el.WeChatPhone}}</td>
+                <td>
+                    {{el.CarID}}
+                </td>
+                <td>{{el.BalanceMoney}}</td>
+                <td><a ms-attr-href="'#!/userDetails/'+el.MemberID">资料详情</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <tsy:pager config="$opt"></tsy:pager>
+    </div>
+</div>

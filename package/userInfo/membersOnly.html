@@ -1,0 +1,147 @@
+<div ms-controller="membersOnly" style="height: 100%;">
+    <!--<div class="mo-header">-->
+
+    <!--</div>-->
+    <img src="./src/images/userInfoimgs/mo-bg.jpg" alt="" style="width: 100%"/>
+    <br/>
+    <div style="background:#C7F71E;" class="container">
+        <div style="padding:4px 10px;">
+            <table class="table table-responsive user-mbr-tableTop" style="border: none;margin-bottom: 7px">
+                <tr>
+                    <td ms-repeat="free">
+                        <a ms-attr-href="el.href">
+                            <div style="height: 100px;line-height:100px;padding-top: 10px"
+                                 ms-class="user-bgTop-{{$index}}">
+                                <div style="width:60px;height: 60px;line-height:45px;border-radius: 30px;margin: 0 auto;">
+                                    <i class='iconfont'
+                                       style='color:#ffffff;font-size: 54px;display: block;margin-top: 6px;'>
+                                        {{el.icon|html}}
+                                    </i>
+                                    <span style='color: #ffffff;margin-top: -10px;font-family: "华文行楷"'>{{el.name|html}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td ms-repeat="out">
+                        <a ms-attr-href="el.href">
+                            <div style="height: 100px;line-height:100px;padding-top: 10px"
+                                 ms-class="user-bgMid-{{$index}}">
+                                <div style="width:60px;height: 60px;line-height:45px;border-radius: 30px;margin: 0 auto;"
+                                     ms-attr-href="el.href">
+                                    <i class='iconfont'
+                                       style='color:#ffffff;font-size: 54px;display: block;margin-top: 6px;'>
+                                        {{el.icon|html}}
+                                    </i>
+                                    <span style='color: #ffffff;margin-top: -10px;font-family: "华文行楷"'>{{el.name|html}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td ms-repeat="others">
+                        <div style="height: 100px;line-height:100px;padding-top: 10px" ms-class="user-bgBot-{{$index}}">
+                            <div style='width:60px;height: 60px;line-height:73px;margin: 0 auto;font-family: "华文行楷"'
+                                 ms-attr-href="el.href">
+                                {{el.icon|html}}
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="padding:0 5px;">
+            <table class="table table-responsive user-mbr-tableBottom" style="border: none;margin-bottom: -2px;">
+                <tr>
+                    <td ms-repeat="only">
+                        <a ms-attr-href="el.href">
+
+                            <div style="height: 100px;line-height:37px;padding-top: 10px"
+                                 ms-class="user-Bottom-bgTop-{{$index}}">
+                                <div style="width:50px;height: 50px;line-height:50px;margin: 0 auto;"
+                                     ms-attr-href="el.href">
+                                    {{el.icon|html}}
+                                </div>
+                                <span style='color: #ffffff;margin-top: -10px;font-family: "华文行楷"'>{{el.name}}</span>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td ms-repeat="onlySec">
+                        <a ms-attr-href="el.href">
+
+                            <div style="height: 100px;line-height:37px;padding-top: 10px"
+                                 ms-class="user-Bottom-bgBot-{{$index}}">
+                                <div style="width:50px;height: 50px;line-height:50px;margin: 0 auto;"
+                                     ms-attr-href="el.href">
+                                    {{el.icon|html}}
+                                </div>
+                                <span style='color: #ffffff; font-family: "华文行楷"'>{{el.name}}</span>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <!--<div class="mo-block">-->
+    <!--<div class="pull-left mo-title">-->
+    <!--成为会员-->
+    <!--</div>-->
+    <!--<div>-->
+    <!--享受便捷，感受尊贵 <br/>-->
+    <!--会员投保折上折，更实惠-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="user-d-fen"></div>-->
+    <!--<div class="mo-block">-->
+    <!--<div class="mo-title-2">-->
+    <!--免费服务-->
+    <!--</div>-->
+    <!--<div class="row">-->
+    <!--<a class="col-xs-3 text-center" ms-repeat="free" ms-attr-href="el.href">-->
+    <!--<div style="height: 60px;line-height: 60px">-->
+    <!--{{el.icon|html}}-->
+    <!--</div>-->
+
+    <!--<div class="text-center" style="margin-top: 13px;color:#3f3f3f">-->
+    <!--{{el.name}}-->
+    <!--</div>-->
+
+    <!--</a>-->
+    <!--</div>-->
+    <!--<br/>-->
+    <!--<div class="row">-->
+    <!--<a class="col-xs-3 text-center" ms-repeat="out" ms-attr-href="el.href">-->
+    <!--<div style="height: 60px;line-height: 60px">-->
+    <!--{{el.icon|html}}-->
+    <!--</div>-->
+
+    <!--<div class="text-center" style="margin-top: 13px;color:#3f3f3f">-->
+    <!--{{el.name}}-->
+    <!--</div>-->
+
+    <!--</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="user-d-fen"></div>-->
+    <!--<div class="mo-block">-->
+    <!--<div class="mo-title-2">-->
+    <!--会员尊享-->
+    <!--</div>-->
+    <!--<div class="row">-->
+    <!--<a class="col-xs-3 text-center" ms-repeat="only" ms-attr-href="el.href" >-->
+    <!--<img ms-attr-src="el.icon" alt="" height="40px" ms-if="el.icon!=''"/>-->
+    <!--{{el.svg|html}}-->
+    <!--<div class="text-center"style="margin-top: 13px;color:#3f3f3f">-->
+    <!--{{el.name}}-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</div>-->
+</div>

@@ -1,0 +1,61 @@
+<!--搜索、状态、时间栏-->
+<div ms-controller="claimsHistory">
+    <div class="row claimscss1">
+        <div class="col-md-6">
+            <span class="t1" style="float: left;line-height: 27px;">提交时间 :</span>
+            <input type="date" class="form-control" ms-duplex="time1"
+                   style="width: 150px;display: inline-block">
+            &nbsp;-&nbsp;
+            <input type="date" class="form-control" ms-duplex="time2"
+                   style="width: 150px;display: inline-block">
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" ms-duplex="w.Keyword"
+                       placeholder="理赔编号/用户名/车牌号/操作人" >
+                <span class="input-group-btn btn-group ">
+                    <a class="btn btn-danger " href="#!/claimsHistory/1">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="icon-search"></i>
+                        搜索&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </a>
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <!--理赔审核表格-->
+    <div class="row active claimscss1">
+        <!--<div class="col-md-1"style="visibility:hidden">col-md-1</div>-->
+        <div class="">
+            <table class="table table-striped t1">
+                <thead>
+                <tr>
+                    <th style="text-align: center">理赔编号</th>
+                    <th>姓名</th>
+                    <th>车牌号</th>
+                    <th>微信手机号</th>
+                    <th>操作员</th>
+                    <th>提交时间</th>
+                    <th>处理时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ms-repeat="list">
+                    <td style="text-align: center">{{el.IndemnifyID}}</td>
+                    <td>{{el.Name}}</td>
+                    <td>{{el.CarID}}</td>
+                    <td>{{el.Phone}}</td>
+                    <td>{{el.AdminName}}</td>
+                    <td>{{el.CommitTime*1000 |date('yyyy-MM-dd')}}</td>
+                    <td>{{el.ExaminePassTime*1000 |date('yyyy-MM-dd')}}</td>
+                    <td><a class="detail_a" ms-attr-href="'#!/ExamineDetails/'+el.IndemnifyID">详情</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <tsy:pager config="$opt"></tsy:pager>
+</div>

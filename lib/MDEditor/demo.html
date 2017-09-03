@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>markdown编辑器组件</title>
+    <link rel="stylesheet" href="../../src/css/bootstrap-all.css"/>
+    <script src="../../src/js/avalon.modern.1.5.min.js"></script>
+    <script src="../../plugins/cache/cache.js"></script>
+</head>
+<body ms-controller="demo">
+
+<tsy:mdeditor config="$opt"></tsy:mdeditor>
+
+</body>
+<script>
+    apiURL=''
+    avalon.ready(function () {
+        require(['../../lib/MDEditor/MDEditor.js'], function () {
+            var vm=avalon.define({
+                $id:"demo",
+                $opt:{
+
+                },
+
+            })
+            avalon.scan()
+        })
+    })
+</script>
+
+</html>

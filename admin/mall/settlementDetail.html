@@ -1,0 +1,46 @@
+<!--结算明细-->
+<!--商品列表-->
+<br/>
+<br/>
+<div class="row " ms-controller="settlementDetail">
+    <div class="col-md-4">
+        <div>
+            商户名称
+        </div>
+         <input type="text" class="form-control" ms-duplex="W.SellerName">
+        <br/>
+    </div>
+    <div class="col-sm-8">
+        <div>
+            起止时间
+        </div>
+        <input type="date" class="form-control pull-left" style="width: auto" ms-duplex="time1"/>
+        <div class="pull-left" style="line-height: 33px">&nbsp;&nbsp;至&nbsp;&nbsp;</div>
+        <input type="date" class="form-control " style="width: auto" ms-duplex="time2"/>
+        <br class="clearfix"/>
+    </div>
+    <div class="col-md-3">
+        <div>
+            类型
+        </div>
+        <tsy:select config="$opt1"></tsy:select>
+        <br/>
+        <br/>
+    </div>
+    <div class="col-md-9">
+        <div>
+            地区
+        </div>
+        <tsy:select config="$opt2"></tsy:select>
+        <br/>
+        <br/>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-block btn-danger btn-lg" type="button" ms-click="getExcel">导出结算明细EXCEL</a>
+        </div>
+    </div>
+
+</div>
+
+

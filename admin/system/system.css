@@ -1,0 +1,153 @@
+.con_1{
+    padding-top: 23px;
+    margin-left: 23px;
+    overflow: hidden;
+}
+.inputCss{
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+/*member*/
+.addId{
+    margin-left: 73%;
+}
+/*service*/
+.sp_1{
+    font-weight: 900;
+    font-size: 1.3em;
+    margin-left: 0;
+    margin-right: 2%;
+}
+/*gifts*/
+.addGift{
+    margin-left:35%;
+}
+.gift-list{
+    margin-top:2%;
+    /*height: 360px;*/
+    /*overflow-y: scroll;*/
+    margin-bottom: 50px;
+    border:2px solid #dddddd;
+
+}
+/*monthTheme*/
+.addMonTheme{
+    /*margin-left: 58%;*/
+    margin-bottom: 20px;
+}
+
+.titleTheme{
+    padding: 5px;
+    /* height: 60px; */
+    /* font-family: '应用字体 Regular', '应用字体'; */
+    font-size: large;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-align: center;
+}
+.bgImg{
+    height:256px;
+    width: 218px;
+}
+.shadowImg{
+    position: absolute;
+    width:100%;
+    left: 0;
+    top:0;
+    opacity: 0.5;
+}
+.state1-font{
+    color: #c3c3c3;
+    font-size: 1.6em;
+    /*position: absolute;*/
+    z-index: 1;
+    font-weight: 600;
+    /*width: 82%;*/
+    text-align: center;
+    /*top: 170px;*/
+
+}
+.state2-font {
+    color: #727272;
+    font-size: 1.6em;
+    /* position: absolute; */
+    z-index: 1;
+    font-weight: 600;
+    /* width: 82%; */
+    text-align: center;
+    /* top: 154px; */
+}
+.bottom-font{
+    position: absolute;
+    text-align: center;
+    width: 82%;
+    line-height:33px;
+}
+.bottom-font>a{
+    text-decoration: none;
+    color: #b1b1b1;
+}
+/*新增活动月*/
+.inner-left{
+    text-align: center;
+}
+.inner-right{
+    text-align: center;
+}
+.a-img-face img{
+    width:150px!important;
+    height:150px!important;
+}
+.a-img-details img{
+    width:256px!important;
+    height:256px!important;
+}
+.action-ing-text{
+    font-size: 20px;
+    text-align: left;
+}
+/*员工管理->修改信息*/
+.box-border{
+    /*border: 1px solid #454556;*/
+}
+.timeInput{
+    width: 160px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+.text-span{
+    font-size: 21px;
+}
+/*//////////////////////////////新增主题月*/
+.amt-topPic{
+    max-width: 750px;
+    max-height: 400px;
+}
+.amt-inPic{
+    width: 750px;
+    height: 1080px;
+}
+.amt-save-btn {
+    width: 200px;
+    height: 40px;
+    margin-right: 30px;
+}
+.amt-sign-btn {
+    width: 200px;
+    height: 40px;
+    margin-right: 300px;
+}
+
+.atm-t{
+    font-size: 1.3em;
+}
+.atm-margin{
+    margin-bottom: 20px;
+}

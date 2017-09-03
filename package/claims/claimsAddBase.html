@@ -1,0 +1,24 @@
+<div ms-controller="claimsAdd">
+    <div class="c-title">
+    <span style="font-size: 32px">
+        <strong>理赔信息填写</strong>
+    </span>
+    </div>
+    <div class="c-main">
+        <h4> <strong>申请人： </strong></h4>
+        <i ms-if="name_flag===1" class="icon-remove-sign c-remove-name-ipt" ms-click="clearName()"></i>
+        <input ms-duplex="Name" class="form-control vc-input1" style="height: 44px" type="text"
+               maxlength="20"  placeholder="输入被保险人的姓名"/>
+        <h4> <strong>手机号： </strong></h4>
+        <i ms-if="phone_flag===1" class="icon-remove-sign c-remove-phone-ipt" ms-click="clearPhone()"></i>
+        <input ms-duplex="Phone" class="form-control vc-input1" style="height: 44px" type="text"
+               maxlength="20"  placeholder="输入手机号码"/>
+        <h4> <strong>车牌号： </strong></h4>
+        <i ms-if="carID_flag===1" class="icon-remove-sign c-remove-carID-ipt" ms-click="clearCarID()"></i>
+        <input ms-duplex="CarID" class="form-control vc-input1" style="height: 44px" type="text"
+               maxlength="7" onchange="claimsAdd.upperCase()"  placeholder="输入完整的车牌号码"/>
+        <div style="padding:30px 0">
+            <button class="c-next" ms-click="goToNext">下一步</button>
+        </div>
+    </div>
+</div>

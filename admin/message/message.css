@@ -1,0 +1,77 @@
+.mes-con {
+    padding-top: 23px;
+    margin-left: 23px;
+    overflow: hidden;
+}
+
+.msg-nav {
+    display: inline-block;
+    width: 125px;
+    text-align: center;
+}
+
+.msg-nav a {
+    font-size: 18px!important;
+    text-decoration: none !important;
+    color: #333333 !important;
+    font-family: 微软雅黑 !important;
+}
+.msg-content{
+    margin: 30px;
+}
+.msg-model-title1{
+    font-size: 21px!important;
+    font-family: 微软雅黑;
+}
+.msg-model-text1{
+    font-size: 21px!important;
+    font-family: 宋体;
+    width: 692px;
+    height: 141px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+.msg-model-title2{
+    font-size: 21px!important;
+
+    font-family: 微软雅黑;
+}
+.msg-model-text2{
+    font-size: 21px!important;
+    font-family: 宋体;
+    width: 692px;
+    height: 141px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
+
+.msg-ms-css1{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.msg-ms-select{
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    position:relative;
+    *display: inline;
+    *zoom: 1
+}
+.msg-ms-file{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+.msg-ms-text{
+    position: relative;
+    padding-right: 5%;
+}
+.msg-ms-icon{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+}

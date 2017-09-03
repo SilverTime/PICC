@@ -1,0 +1,16 @@
+<div class="container">
+    <br/>
+    <br/>
+    <div>
+        车险理赔示例
+    </div>
+    <br/>
+    <div class="panel panel-danger" ms-repeat="claimsETC">
+        <div class="panel-heading">
+            {{$index+1}}. {{el[0]}}
+        </div>
+        <div class="panel-body">
+            答：{{el[1]}}
+        </div>
+    </div>
+</div>

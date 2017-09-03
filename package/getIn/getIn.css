@@ -1,0 +1,241 @@
+body{margin: 0;padding: 0;}
+* {font-family: "宋体";}
+a{text-decoration: none;}
+.container_1{width:100%; margin:0}
+.container_2{
+    /*这里设置的固定宽高需修改*/
+    height: 627px;
+    width:100%;
+    margin:0;
+    background: #FFFFFF;
+    padding:30px
+}
+
+/*register*/
+#u15_img{width: 100%;margin: 0;}
+#u37_img{width:15%; margin: 0; }
+.inner_1 {
+    /*text-align: right;*/
+    padding: 2% 2.3%;
+    font-size: 1.25em;
+    line-height:1.5em;
+    width: 100%;
+    height:79px;
+    position: relative;
+    color: #999999;
+}
+
+.inner_2 {
+    text-align: left;
+    font-size: 1.5em;
+    color: #aaa;
+    border-top:#999999 1px solid;
+    padding: 3%;
+}
+.input_register{border: hidden;}
+.inner_rr {
+    padding-top: 5%;
+    padding-left: 18%;
+    padding-bottom: 3.4%;
+}
+.btn_rr {
+    font-size: 1.5em;
+    width:80%;
+    height: 50px;
+    color: white;
+    background: #ff320a;
+    border-radius: 15px;
+}
+
+/*.inner_gn {*/
+    /*padding-left: 30%;*/
+    /*padding-top: 2%;*/
+    /*padding-bottom: 3.4%;*/
+/*}*/
+
+/*.btn_gn {*/
+    /*font-size: 1.5em;*/
+    /*width: 53%;*/
+    /*height: 70px;*/
+    /*color: #ff320a;*/
+    /*background: #fff;*/
+    /*border: solid #ff320a;*/
+    /*border-radius: 15px;*/
+/*}*/
+
+.Font_1 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.Font_2 {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+
+/*success*/
+#u13_img {width: 35%;}
+.img_suc_box{
+    text-align: center;
+    padding-top:13%;
+    padding-bottom:5%;
+}
+.suc_div1{
+    text-align: center;
+    font-size: 1.8em;
+}
+ .suc_div2{
+     text-align: center;
+     font-size: 1.4em;
+     font-weight: 500;
+     padding-top: 3%;
+     padding-bottom: 8%;
+ }
+ .suc_div3{
+     padding-top: 3%;
+     padding-bottom: 3%;
+     text-align: center;
+     font-size: 1.8em;
+     background: #ff320a;
+     color: white;
+ }
+/*waiting*/
+#wai_div1{
+    text-align: center;
+    padding-top: 20%;
+    padding-bottom: 7%;
+}
+#wai_text{
+    text-align: center;
+    font-size: 1.3em;
+}
+/*login*/
+.log_div1{
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 90%;
+    border: 1px solid #aaa;
+    text-align: left;
+    font-size: 1.5em;
+    padding: 4% 0 4% 4%;
+    border-radius: 10px 10px 0 0;
+    float: left;
+
+}
+.log_div2{
+    margin-bottom: 5%;
+    margin-left: 5%;
+    width: 90%;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    text-align: left;
+    font-size: 1.5em;
+    padding: 4% 0 4% 4%;
+    border-radius:0 0 10px 10px;
+    float: left;
+}
+#log_div1R{
+    float: left;
+    width: 80%;
+    padding-left: 5%;
+}
+#log_div2L{
+    width: 45%;
+    float: left;
+    color: inherit;
+    padding-left: 5%;
+
+}
+#log_div2R{
+    float: left;
+    width: 35%;
+    color: inherit;
+    border-left:1px solid #aaa; /*中间分割线*/
+    padding-left: 5%;
+    margin-left: 7%;
+}
+#u22_img{
+    width: 10%;
+    float: left;
+}
+#u24_img{
+    width: 10%;
+    float: left;
+}
+.input_login{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 43px;
+    width: 100%;
+    color: #adadad;
+    outline: none;
+    /*line-height: 43px;*/
+    padding-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+
+}
+.input_login input{
+    height: 41px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    padding-left: 40px;
+    color:#666666;
+    font-weight: bold;
+    width: 100%;
+}
+.input_login img{
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    max-width: 29px;
+    /* max-height: 30px; */
+}
+.input_login span{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.input_login span:active{
+    color: #000000;
+}
+
+
+.main{
+    padding: 28px;
+}
+
+.buttom-btn a{
+    color: #F1481D;
+    font-size: 18px;
+    font-weight: bold;
+}
+.buttom-btn a:active{
+    text-shadow: 0px 0px 7px #ef4c22;
+}
+
+.login-footer{
+    margin-top: 134px;
+    text-align: center;
+    /* display: block; */
+    width: 100%;
+    bottom: 4px;
+    font-size: 13px;
+    color: #969696;
+}
+
+.reg-label{
+    background-color:#F1481D ;
+    padding:4px;
+    color:#fff;
+    text-align: center;
+    font-size: 10px;
+}
+.reg-label>img{
+    height: 16px;
+}

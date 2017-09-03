@@ -1,0 +1,254 @@
+<!--商家信息-->
+<div class="newMerchant1" ms-controller="merchantInfo">
+    <div class="mi-head row" style="color:#c4c4c4;">
+        <div class="col-sm-2 seller-pic text-center">
+            <img ms-attr-src="info.Pic" alt="" style="    max-width: 100%;
+    height: 71px;"/><br/>
+
+            <span></span>
+            <a class="btn btn-block btn-default" ms-attr-href="#!/newMerchant/{{info.SellerID}}">修改</a>
+        </div>
+        <div class=" col-sm-4 seller-info">
+
+
+            <!-- 基本信息-->
+            <div class="mi-block" style="color:#c4c4c4;">
+
+                <div>
+            <span class="mi-icon">
+                <i class=" icon-user"></i>
+            </span>
+                    商家：
+                    {{info.SellerName}}
+                </div>
+
+                <!-- 服务-->
+                <div>
+            <span class="mi-icon">
+                <i class="icon-ambulance"></i>
+            </span>
+                    类型：
+                    {{info.SellerTypeName}}
+                </div>
+
+                <!-- 地址-->
+                <div>
+            <span class="mi-icon">
+                <i class="icon-map-marker"></i>
+            </span>
+                    地址：
+                    {{info.Address}}
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+            <span class="mi-icon">
+                <i class=" icon-phone-sign"></i>
+            </span>
+                电话：
+                {{info.Phone}}
+            </div>
+            <div>
+            <span class="mi-icon">
+                <i class=" icon-sitemap"></i>
+            </span>
+
+                 <span>
+                     等级：
+                    {{info.star|html}}
+                </span>
+            </div>
+
+            <!-- 服务时间-->
+            <div>
+            <span class="mi-icon">
+                <i class="icon-time"></i>
+            </span>
+                营业时间：
+                {{info.WorkTime}}
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <a ms-attr-href="info.QRCode" target="_blank">
+                <img ms-attr-src="info.QRCode" alt="" class="img-responsive"/>
+            </a>
+            <button class="btn btn-block btn-sm btn-default" ms-click="reQR">重新生成二维码</button>
+
+        </div>
+    </div>
+
+
+    <hr/>
+
+    <!-- 选购服务-->
+    <div class="mi-block">
+
+        <div class="mi-block-title" >
+            商品列表
+            <button class="btn btn-xs btn-danger" ms-click="showAddGoods(true)" ms-visible="!showingAdd">添加商品</button>
+        </div>
+        <br/>
+        <div class="panel panel-default panel-body" ms-visible="showingAdd">
+            <div class="row" >
+                <div class="col-sm-4">
+                    商品名称：
+                    <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="add.GoodsName"/>
+                </div>
+                <div class="col-sm-4">
+                    总库存数量：<small>为零或不填则无限数量</small>
+                    <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="add.Total"/>
+                </div>
+                <div class="col-sm-4">
+                    价格：
+                    <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="add.Price"/>
+                </div>
+                <div class="col-sm-4">
+                    单位：
+                    <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="add.Unit"/>
+                </div>
+                <div class="col-sm-4">
+                    原价：
+                    <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="add.PricePrimary"/>
+                </div>
+                <div class="col-sm-4">
+                    每人限购数：<small>为零或不填则无限次数</small>
+                    <input type="text" class="form-control" style="margin-bottom: 10px" ms-duplex="add.BuyMax"/>
+                </div>
+                <div class="col-sm-4">
+                    开始时间：
+                    <input type="date" class="form-control" style="margin-bottom: 10px" ms-duplex="time1"/>
+                </div>
+                <div class="col-sm-4">
+                    过期时间：
+                    <input type="date" class="form-control" style="margin-bottom: 10px" ms-duplex="time2"/>
+                </div>
+                <div class="col-sm-2">
+                    <br/>
+                    <button class="btn btn-block btn-danger" ms-click="addGoods">添加</button>
+                </div>
+                <div class="col-sm-2">
+                    <br/>
+                    <button class="btn btn-block btn-default" ms-click="showAddGoods(false)">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mi-block-list col-sm-4" ms-repeat="info.Goods">
+                <div style="position: absolute; right: 20px;top:-10px;background-color: #fff;padding:0px 3px">
+                    <small class="text-danger">销售中</small>
+                    <button class="btn btn-xs btn-default"
+                            ms-click="banGoods(el.GoodsID)">下架</button>
+                </div>
+
+                <div class="panel panel-danger panel-body">
+                    <span style="color: #5b5b5b;">
+                    {{el.GoodsName}}
+                </span>
+                <span style="color:#c4c4c4;font-size: 12px" ms-if="el.OverdueTime>0">
+                    {{el.OverdueTime*1000|date('yyyy年MM月dd日')}}
+                    <span> 前有效</span>
+                </span>
+
+                    <div style="color: #f04c22;">
+                        <img src="./src/images/userInfoimgs/yuanBao.png" alt="" style="height: 22px;margin-top: -5px;"/>
+                        <span>元宝价</span>
+                        <span>{{el.Price}}</span>
+                        <span style="text-decoration: line-through;color: #B3B3B3;">{{el.PricePrimary}}</span>
+                    </div>
+                    <div>
+                        每人限购：{{el.BuyMax}} <small>(单位){{el.Unit}}</small>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <br/>
+        <div class="row">
+            <div class="mi-block-list col-sm-4" ms-repeat="info.BanGoods">
+                <div style="position: absolute; right: 20px;top:-10px;background-color: #fff;padding:0px 3px">
+                    <small>已下架</small>
+                    <!--<button class="btn btn-xs btn-default"-->
+                            <!--ms-click="startGoods(el.GoodsID)">上架</button>-->
+                </div>
+
+                <div class="panel panel-default panel-body">
+                    <span style="color: #5b5b5b;">
+                    {{el.GoodsName}}
+                </span>
+                <span style="color:#c4c4c4;font-size: 12px" ms-if="el.OverdueTime>0">
+                    {{el.OverdueTime*1000|date('yyyy年MM月dd日')}}
+                    <span> 前有效</span>
+                </span>
+
+                    <div style="color: #f04c22;">
+                        <img src="./src/images/userInfoimgs/yuanBao.png" alt="" style="height: 22px;margin-top: -5px;"/>
+                        <span>元宝价</span>
+                        <span>{{el.Price}}</span>
+                        <span style="text-decoration: line-through;color: #B3B3B3;">{{el.PricePrimary}}</span>
+                    </div>
+                    <div>
+                        每人限购：{{el.BuyMax}} <small>(单位){{el.Unit}}</small>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <br/>
+        <div class="row">
+            <div class="mi-block-list col-sm-4" ms-repeat="info.TimeOutGoods">
+                <div style="position: absolute; right: 20px;top:-10px;background-color: #fff;padding:0px 3px">
+                    <small style="color: #ddd">已过期</small>
+                </div>
+
+                <div class="panel panel-default panel-body">
+                    <span style="color: #5b5b5b;">
+                    {{el.GoodsName}}
+                </span>
+                <span style="color:#c4c4c4;font-size: 12px" ms-if="el.OverdueTime>0">
+                    {{el.OverdueTime*1000|date('yyyy年MM月dd日')}}
+                    <span> 前有效</span>
+                </span>
+
+                    <div style="color: #f04c22;">
+                        <img src="./src/images/userInfoimgs/yuanBao.png" alt="" style="height: 22px;margin-top: -5px;"/>
+                        <span>元宝价</span>
+                        <span>{{el.Price}}</span>
+                        <span style="text-decoration: line-through;color: #B3B3B3;">{{el.PricePrimary}}</span>
+                    </div>
+                    <div>
+                        每人限购：{{el.BuyMax}} <small>(单位){{el.Unit}}</small>
+                    </div>
+                </div>
+
+
+            </div>
+            <br/>
+        </div>
+
+    </div>
+
+    <hr/>
+
+    <!-- 购买须知-->
+    <div class="mi-block">
+        <div class="mi-block-title">
+
+            购买须知
+        </div>
+        <ul class="mi-list">
+            <li ms-repeat="info.Notice">
+                <span class="dot"></span>
+                {{el.Content}}
+            </li>
+        </ul>
+    </div>
+</div>

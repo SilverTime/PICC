@@ -1,0 +1,37 @@
+<div ms-controller="operationControl" class="mes-con">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" ms-repeat="msgNav" class="msg-nav" ms-class="active:now==$index">
+            <a ms-click="sendId($index)">
+                {{el.name}}
+            </a>
+        </li>
+    </ul>
+    <div>
+        <br/>
+
+        <div class="row">
+            <div class="col-sm-9">
+                <textarea class="form-control" style="width: 100%; resize: none;" ms-duplex="Mould" rows="3"></textarea>
+            </div>
+            <div class="col-sm-3">
+                <div>
+                    上次更新时间：<br/>
+                    {{msgNav[now].UpdateTime*1000|date('yyyy-MM-dd HH:mm:ss')}}
+                </div>
+                <button class="btn btn-danger btn-block" ms-click="sendMsg(now)">保存</button>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            <div class="col-xs-3" style="color:#999999;line-height: 30px;" ms-repeat="tips">
+                {{$key}}:
+                <span class="badge" style="font-size: 18px">{{$val}}</span>
+                &nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+
+
+    </div>
+</div>

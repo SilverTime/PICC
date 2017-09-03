@@ -1,0 +1,56 @@
+<!--短信群发-->
+<div ms-controller="msgSend">
+    <h3>
+        导入CSV文件群发短信
+        <a class="btn btn-xs btn-default" href="./src/csv/短信群发模板.csv">下载导入模板</a>
+    </h3>
+    <div class="row msg-ms-css1">
+        <div class="col-md-2">
+            <a class="btn btn-default" style="width: 100%;">
+                <input type="file" name="selectFile"  class="msg-ms-file" ms-on-change="getText" id="file"/>选择文件
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="tooltip top" role="tooltip" style="opacity: 1;margin-top: -39px;right: 0px;" ms-visible="textFocusing">
+                <div class="tooltip-arrow"></div>
+                <div class="tooltip-inner" style="max-width: 960px">
+                    使用 <big> [表头名称] </big>可以在发送短信时插入对应列的值
+                </div>
+            </div>
+            <input type="text" id="text" ms-on-focus="inputFocus(true)" ms-on-blur="inputFocus(false)" name="messageInput" ms-duplex="msg" placeholder="请在此输入短信内容" class="form-control msg-ms-text">
+            <a ms-click="clear1()" ms-if="msg!=''&&state!=1"  class="msg-ms-icon"><i class="icon-remove-sign" style="color: dimgrey;"></i></a>
+            <i ms-if="state==1" class="icon-spinner icon-spin msg-ms-icon"></i>
+            <i ms-if="state==2&&textState==0" class="icon-ok-sign msg-ms-icon" style="color: green;"></i>
+            <!--<i ms-if="state==3" class=" icon-exclamation-sign msg-ms-icon" style="color: red;"></i>-->
+        </div>
+        <div class="col-md-2">
+            <button ms-if="state!=1" class="btn btn-danger" style="width: 100%;" ms-click="send">确认发送</button>
+            <button ms-if="state==1" class="btn btn-danger" style="width: 100%;">正在发送……</button>
+        </div>
+    </div>
+
+
+    <div class="row msg-ms-css1">
+        <div class="col-md-12">
+            短信发送名单：
+        </div>
+    </div>
+
+    <table class="table table-bordered table-responsive" style="margin-top: 20px;">
+        <thead>
+        <tr>
+            <td ms-repeat-el="listHead">
+                {{el}}
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ms-repeat-el="list">
+            <td ms-repeat-al="el">
+                {{al}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

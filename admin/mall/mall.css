@@ -1,0 +1,324 @@
+/*/////////////////////////////////////////mallList（商家列表）样式表*/
+.mallCss1{
+    padding-left: 1%;
+    padding-top: 2%;
+}
+.mallCss2{
+    padding-left: 2.5%;
+    padding-top: 1%;
+}
+.mallCss3{
+    width: 8%;
+    float: left;
+}
+.t1{
+    font-size: 1.2em;
+}
+/*新增商家按钮*/
+.newMerchant_btn{
+    width: 150px;
+    height: 30px;
+    background-color: orangered;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.4em;
+    float: right;
+}
+/*搜索框按钮*/
+.search_btn{
+    width: 150px;
+    height: 30px;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+    font-size: 1.4em;
+    float: left;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+/*时间输入框*/
+.timeInput{
+    width: 100px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+/*用户名输入框*/
+.nameInput{
+    width: 125px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+    margin-left: 3%;
+}
+
+/*///////////////////////////////////goodsList(商品列表)样式表*/
+.goodsList1{
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
+}
+/*标题*/
+.title1{
+    font-size: 2em;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+/*图标 i */
+.icon1{
+    width: 5%;
+    height: 5%;
+    margin-right: 1%;
+}
+/*链接样式*/
+.linkCss1{
+    padding-top: 3%;
+    font-size: 1.2em;
+    padding-bottom: 2%;
+}
+
+/*/////////////////////////////////newMerchant(新增商家)样式表*/
+.newMerchant1{
+    /*width: 700px;*/
+    /*min-width:400px;*/
+    /*padding-left: 20%;*/
+    padding-top:1%;
+    padding-bottom: 1%;
+    /*margin-left: 2%;*/
+    margin-top: 2%;
+    /*overflow: hidden;*/
+    font-size: 1.2em;
+}
+/*商品名称、联系电话、营业时间输入框*/
+.input1{
+    /*width: 150px;*/
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+/*详细地址输入框*/
+.input2{
+    width: 300px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+/*营业时间输入框*/
+.input3{
+    width: 200px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+/*添加按钮*/
+.newBtn{
+    width: 150px;
+    height: 40px;
+    background-color: #e8380e;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    margin-left: 25%;
+}
+/*//////////////////////////////////商家信息样式表*/
+/*完成修改按钮*/
+.modificationBtn{
+    width: 150px;
+    height: 40px;
+    background-color: #e8380e;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    margin-left: 10%;
+}
+/*重置按钮*/
+.resetBtn{
+    width: 150px;
+    height: 40px;
+    background-color: #989898;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    margin-left: 5%;
+}
+
+/*///////////////////////////////////goodsDetail（商品详情）样式表*/
+.goodsDetail1{
+    width: 550px;
+    min-width:400px;
+    padding-left: 12%;
+    padding-top:2%;
+    padding-bottom: 2%;
+    margin-left: 10%;
+    margin-top: 2%;
+    overflow: hidden;
+    font-size: 1.2em;
+}
+/*返回按钮*/
+.returnBtn1{
+    width: 150px;
+    height: 40px;
+    background-color: #e8380e;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.2em;
+    margin-left: 18%;
+}
+.outBtn{
+    color: grey;
+    margin-left: 20%;
+}
+/*///////////////////////////QRCode（商家二维码）样式表*/
+.QRCode1{
+    width: 700px;
+    min-width:400px;
+    padding: 2%;
+    margin-left: 8%;
+    margin-top: 2%;
+    overflow: hidden;
+}
+.list1{
+    text-align: center;
+}
+.returnBtn2{
+    width: 150px;
+    height: 40px;
+    background-color: #e8380e;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.2em;
+    margin-left: 38%;
+}
+/*tr th{*/
+    /*text-align: center;*/
+/*}*/
+
+/*///////////////////////orderDetails(订单详情)样式表*/
+.orderDetails1{
+    padding: 1%;
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
+    font-size: 1.2em;
+}
+.input4{
+    width: 85px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+.row1{
+    padding: 1%;
+}
+.searchBtn{
+    width: 150px;
+    height: 30px;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    color: gray;
+    font-size: 1.4em;
+    line-height: 30px;
+    float: left;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+.icon2{
+    width: 20px;
+    height: 20px;
+}
+
+/*///////////////////////////giftManagement（赠送管理）样式表*/
+.giftManage1{
+    padding: 1%;
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
+    font-size: 1.2em;
+}
+.input5{
+    width: 85px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+.giftBtn{
+    height: 30px;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    color: gray;
+    font-size: 1.4em;
+    line-height: 30px;
+    float: left;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+.giftTitle{
+    margin-left: 30%;
+    font-size: 1.5em;
+}
+.row2{
+    margin-top: 2%;
+}
+
+/*////////////////////////////////////商品审核详情样式表*/
+.goodsExamineDetail{
+    width: 550px;
+    min-width:400px;
+    padding-left: 25%;
+    padding-top:2%;
+    padding-bottom: 2%;
+    margin-left: 2%;
+    margin-top: 2%;
+    overflow: hidden;
+    font-size: 1.2em;
+}
+.passBtn1{
+    width: 150px;
+    height: 40px;
+    background-color: #e8380e;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.2em;
+}
+.noPassBtn1{
+    width: 150px;
+    height: 40px;
+    background-color: #989898;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.2em;
+    margin-left: 2%;
+}
+
+
+.mi-icon{
+    width: 34px;
+    display: block;
+    float: left;
+    text-align: center;
+}

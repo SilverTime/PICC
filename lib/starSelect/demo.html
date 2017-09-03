@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../src/js/avalon.modern.1.5.min.js"></script>
+    <link rel="stylesheet" href="../../src/css/font-awesome.min.css"/>
+</head>
+<body ms-controller="starSelect">
+<span ms-repeat="star" ms-click="show($index)">
+    <i  ms-class="icon-star" ms-visible="el.t==1"></i>
+    <i  ms-class="icon-star-empty" ms-visible="el.t==0"></i>
+</span>
+
+</body>
+<script>
+    avalon.ready(function(){
+        vm=avalon.define({
+            $id:'starSelect',
+            star:[{t:0},{t:0},{t:0},{t:0},{t:0}],
+            max:5,
+            show: function (index) {
+               for(var i=0;i<index+1;i++){
+                   vm.star[i].t=1
+               }
+                for(var o=vm.max-1;o>index;o--){
+                    vm.star[o].t=0
+                }
+            }
+        })
+        avalon.scan()
+    })
+    }
+//    function show(){
+//        var o=document.getElementsByTagName("i");
+//        var i=0;
+//        var iStar=new Array(5);
+//        var unStar=new Array(5);
+//        for(i=0;i< o.lenth-1;i++) {
+//            o.index=i;
+//            o.onmouseover = function () {
+//                iStar = avalon.range(0, i + 1);
+//                unStar = avalon.range(0, 5 - i - 1);
+//            };
+//            o.onmouseout = function () {
+//                iStar= avalon.range(iStar[i].length, 0);
+//                unStar = avalon.range(iStar[i].length, 5);
+//            };
+//            o.onclick = function () {
+//                iStar = avalon.range(iStar[i].length, i);
+//                unStar = avalon.range(unStar[i].length, 5 - i);
+//            };
+//        }
+//    }
+</script>
+</html>

@@ -1,0 +1,20 @@
+<div ms-controller="selfHelp">
+
+    <div class="sh-head text-center">
+        <img src="./src/images/doc/sh_head_03.png" alt=""/>
+        自助客服
+    </div>
+
+    <!--列表的-->
+    <div class="sh-content" ms-if="state==0">
+        <a ms-repeat="bigClass" class="sh-big-class" ms-attr-href="#!/selfHelp/{{$index+1}}">
+            <i class="icon-angle-right pull-right" style="font-size: 26px;color: #7BCFFC;"></i>
+            {{$index+1}}. {{el}}
+        </a>
+    </div>
+
+    <!--文章详情-->
+    <div class="sh-content" ms-if="state>0">
+        {{content|html}}
+    </div>
+</div>

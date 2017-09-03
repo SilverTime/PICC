@@ -1,0 +1,116 @@
+<div ms-controller="spendInfo">
+    <div style="    max-height: 210px;
+    overflow: hidden;">
+        <img ms-attr-src="info.Pic" alt="" style="width: 100%"/>
+    </div>
+
+    <div class="mi-head">
+        <div class="seller-info">
+            <span>{{info.SellerName}}</span><br/>
+                <span>
+                    {{info.star|html}}
+                </span>
+
+
+        </div>
+    </div>
+    <div class="mi-block-title">
+        服务名称&nbsp;&nbsp;
+        <span>{{Order.GoodsName}}</span>
+        <br/>
+        有效期至&nbsp;&nbsp;
+        <span>{{Order.OverdueTime*1000|date('yyyy年MM月dd日')}}</span>
+
+    </div>
+    <!-- 基本信息-->
+    <div class="mi-block" style="color:#c4c4c4;padding: 10px 20px;line-height: 1;">
+
+        <!-- 服务-->
+        <div>
+            <div class="mi-icon pull-left">
+                <img src="./src/images/mall/icon-car.png" alt="" height="24px"/>
+            </div>
+            <div class="mi-base">
+                {{businessType[info.SellerTypeID].name}}
+            </div>
+        </div>
+
+        <!-- 地址-->
+        <div  class="mi-base-box">
+            <div class="mi-icon pull-left">
+                <i class="icon-map-marker"></i>
+            </div>
+            <div class="mi-base">
+                {{info.Address}}
+            </div>
+
+        </div>
+
+        <!-- 服务时间-->
+        <div  class="mi-base-box">
+            <div class="mi-icon pull-left">
+                <i class="icon-time"></i>
+            </div>
+            <div class="mi-base">
+                {{info.WorkTime}}
+            </div>
+
+        </div>
+        <div class="mi-base-box"></div>
+    </div>
+
+    <div class="mi-block">
+        <button class="btn-pay" ms-click="scan" ms-if="Order.OrderState==0">
+            扫描二维码 体验服务
+        </button>
+        <button class="btn-pay" style="background-color: #575757" ms-if="Order.OrderState==1">
+            已消费
+        </button>
+        <button class="btn-pay" style="background-color: #b9b9b9" ms-if="Order.OrderState==2">
+            已过期
+        </button>
+
+    </div>
+
+
+    <!-- 消费详情-->
+    <div class="mi-block">
+        <div class="mi-block-title" ms-click="toggleGoods">
+            <i class="icon-angle-down pull-right icon-2x"></i>
+            消费详情
+        </div>
+        <div ms-visible="showGoods" class="mi-block-list" style="font-size: 12px;color: #797979;">
+            商品名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{Order.GoodsName}} <br/>
+            订单编号&nbsp;&nbsp;{{Order.OrderID}} <br/>
+            购买时间&nbsp;&nbsp;{{Order.PayTime*1000|date('yyyy年MM月dd日 HH:mm')}} <br/>
+            联系电话&nbsp;&nbsp;{{Order.Phone}} <br/>
+            消耗元宝&nbsp;&nbsp;{{Order.PayMoney}}
+        </div>
+
+    </div>
+
+
+    <!--&lt;!&ndash; 购买须知&ndash;&gt;-->
+    <!--<div class="mi-block">-->
+        <!--<div class="mi-block-title" ms-click="toggleNotice">-->
+            <!--<i class="icon-angle-down pull-right icon-2x"></i>-->
+            <!--购买须知-->
+        <!--</div>-->
+        <!--<ul class="mi-list" ms-visible="showNotice">-->
+            <!--<li ms-repeat="info.Notice">-->
+                <!--<span class="dot"></span>-->
+                <!--{{el.Content}}-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash; 服务条款&ndash;&gt;-->
+    <!--<div class="mi-block">-->
+        <!--<div class="mi-block-title">-->
+            <!--<i class="icon-angle-down pull-right icon-2x"></i>-->
+            <!--服务条款-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+</div>

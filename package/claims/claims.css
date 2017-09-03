@@ -1,0 +1,297 @@
+.c-title {
+    height: 86px;
+    line-height: 69px;
+    font-size: 20px;
+    border-bottom: 13px solid #f4f5f9;
+    text-align: center;
+    position: relative;
+}
+
+.c-exp {
+    border: #f0481e solid 5px;
+    border-radius: 500px;
+    width: 56px;
+    height: 56px;
+    line-height: 47px;
+    text-align: center;
+    margin: 8px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #f0481e;
+    font-weight: bold;
+}
+
+.c-main {
+    padding: 12px 15px;
+}
+
+.btn-claims {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #f0481e;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.c-upload {
+    margin-top: 25px;
+    color: #b5b5b5;
+    font-size: 20px;
+    border-bottom: 1px solid #b5b5b5;
+    padding-bottom: 10px;
+}
+
+.c-list-i {
+    height: 97px;
+    margin-top: 16px;
+    border-left: 11px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #ddd;
+    padding: 5px 18px;
+    color: #6a6a6a;
+}
+
+.cli-1 {
+    border-color: #73d00f;
+}
+
+.cli-0 {
+    border-color: #fad530;
+}
+
+.cli-2 {
+    border-color: #b9b9b9;
+}
+
+.cli-info {
+    font-size: 19px;
+    line-height: 44px;
+}
+
+.ci-block {
+    color: #898989;
+    padding: 17px;
+    line-height: 36px;
+    border-bottom: 12px solid #f3f4f8;
+}
+.ci-addpic{
+    background-color: #f2f3f7;
+    padding: 17px;
+}
+
+.ci-block span {
+    color: #505050
+}
+
+.ci-block > .login-btn {
+    width: 100%;
+    border-radius: 4px;
+    outline: none;
+}
+
+.ci-content {
+    padding: 17px;
+    color: #898989
+}
+
+.ci-dot-line {
+    float: left;
+    position: relative;
+}
+
+.ci-dot-line > .dot {
+    height: 15px;
+    width: 15px;
+    background-color: #f0481e;
+    border-radius: 10px;
+}
+
+.ci-dot-line > .line {
+    height: 76px;
+    width: 1px;
+    background-color: #f0481e;
+    margin-left: 7px;
+}
+
+.ci-time {
+    margin-left: 43px;
+    margin-bottom: 26px;
+}
+
+.ci-state-0, .ci-state-1, .ci-state-2 {
+    line-height: 1;
+    padding: 5px 18px;
+    border-radius: 10px;
+    color: #fff !important;
+    font-size: 13px;
+}
+
+.ci-state-0 {
+    background-color: #fad530;
+}
+
+.ci-state-1 {
+
+    background-color: #73d00f;
+}
+
+.ci-state-2 {
+    background-color: #b9b9b9;
+}
+
+@keyframes am {
+    from {
+        margin-top: 100px
+    }
+    to {
+        margin-top: 0px
+    }
+}
+
+.claimsAdd > div {
+    /*animation: am 0.5s;*/
+    /*height: 1px;*/
+    overflow: auto;
+    transition: all 0.5s ;
+}
+.cashow{
+    height: 0px!important;
+    overflow: hidden!important;
+}
+
+.ca-title {
+    text-align: center;
+    color: #5f5f5f;
+    font-size: 20px;
+    padding: 13px;
+
+}
+
+.ca-block {
+    border-bottom: 13px solid #f4f5f9;
+    padding: 7px 19px;
+
+}
+
+.ca-sub {
+    color: #545454;
+    border-left: 5px solid #f0481e;
+    padding-left: 11px;
+}
+
+.ca-sub > small {
+    color: #afadad;
+}
+
+.ca-addmore {
+    height: 70px;
+    width: 70px;
+    border: 1px dashed #ddd;
+    float: left;
+    line-height: 70px;
+    text-align: center;
+    color: #ddd;
+    margin: 10px 5px;
+    font-size: 51px;
+    border-radius: 5px;
+}
+
+.ca-qus {
+    position: absolute;
+    right: 9px;
+}
+
+.ca-goon{
+    height: auto!important;
+    color: #7c7d7d;
+    text-align: center;
+    margin: 50px 0px;
+}
+.ca-goon>span{
+    /*display: block;*/
+    margin-top: -10px;
+    background-color: #ffffff;
+}
+.ca-goon>hr{
+    border-bottom: #c7c7c7;
+    margin-bottom: -11px;
+}
+
+.ca-icon-g{
+    position: relative;
+}
+.ca-icon-g>i{
+    position: absolute;
+    left: -19px;
+}
+
+.car-id{
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+    border-bottom: 1px solid #C7C7C7;
+}
+.car-id>a{
+    color: #323232;
+}
+
+.demo-ol{
+    background-color: #f0481e;
+    text-align: center;
+    border-radius: 100px;
+    color: #fff;
+    width: 20px;
+    margin-left: -30px;
+}
+
+.lizi{
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    border-radius: 15px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #f0481e;
+}
+
+/*理赔信息填写页面css*/
+.c-next{
+    background: linear-gradient(to right,#fa7351, #f04c22);
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    outline: none;
+}
+.c-remove-name-ipt {
+    position: absolute;
+    top: 152px;
+    right: 33px;
+    z-index: 1;
+    width: 110%
+}
+.c-remove-phone-ipt {
+    position: absolute;
+    top: 236px;
+    right: 33px;
+    z-index: 1;
+    width: 110%
+}
+.c-remove-carID-ipt {
+    position: absolute;
+    top: 318px;
+    right: 33px;
+    z-index: 1;
+    width: 110%
+}

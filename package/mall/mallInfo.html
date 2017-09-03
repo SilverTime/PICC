@@ -1,0 +1,148 @@
+<div ms-controller="mallInfo">
+    <div style="    max-height: 210px;
+    overflow: hidden;">
+        <img ms-attr-src="info.Pic" alt="" style="width: 100%"/>
+    </div>
+
+    <div class="mi-head">
+        <div class="seller-info">
+            <span>{{info.SellerName}}</span><br/>
+                <span>
+                    {{info.star|html}}
+                </span>
+
+
+        </div>
+    </div>
+
+
+    <!-- 基本信息-->
+    <div class="mi-block" style="color:#c4c4c4;padding: 10px 20px;line-height: 1;">
+        <!-- 服务-->
+        <div ms-if="info.SellerTypeID==2" class="mi-base-box">
+            <div class="mi-icon pull-left">
+                <img src="./src/images/mall/icon-car.png" alt="" height="24px"/>
+            </div>
+            <div class="mi-base">
+                {{businessType[info.SellerTypeID].name}}
+            </div>
+
+        </div>
+
+        <!-- 地址-->
+        <div  class="mi-base-box">
+            <div class="mi-icon pull-left">
+                <i class="icon-map-marker"></i>
+            </div>
+            <div class="mi-base">
+                {{info.Address}}
+            </div>
+
+        </div>
+
+        <!-- 服务时间-->
+        <div  class="mi-base-box">
+            <div class="mi-icon pull-left">
+                <i class="icon-time"></i>
+            </div>
+            <div class="mi-base">
+                {{info.WorkTime}}
+            </div>
+
+        </div>
+
+        <!-- 手机号-->
+        <div  class="mi-base-box">
+            <div class="mi-icon pull-left">
+                <i class="icon-phone-sign"></i>
+            </div>
+            <div class="mi-base">
+                {{info.Phone}}
+            </div>
+
+        </div>
+        <div class="mi-base-box"></div>
+    </div>
+    <!-- 活动介绍-->
+    <div class="mi-block" ms-if="info.SellerTypeID==3">
+        <div class="mi-block-title">
+            活动介绍
+        </div>
+        <div class="mi-block-list">
+            {{info.Note|html}}
+        </div>
+    </div>
+
+
+    <!-- 选购服务-->
+    <div class="mi-block">
+        <div class="mi-block-title" ms-click="toggleGoods">
+            <i class="icon-angle-down pull-right icon-2x"></i>
+            选购服务
+        </div>
+        <div ms-visible="showGoods">
+            <div class="mi-block-list" ms-repeat="info.Goods" ms-click="goodsCheck($index)">
+                <div class="pull-right mi-check">
+                    <i class="icon-ok icon-2x" ms-visible="el.Checked"></i>
+                </div>
+
+                <span style="color: #5b5b5b;">
+                    {{el.GoodsName}}
+                </span>
+                <span style="color:#c4c4c4;font-size: 12px" ms-if="el.OverdueTime>0">
+                    {{el.OverdueTime*1000|date('yyyy年MM月dd日')}}
+                    <span> 前有效</span>
+                </span>
+                <div style="color: #f04c22;">
+                    <img src="./src/images/userInfoimgs/yuanBao.png" alt="" style="height: 22px;margin-top: -5px;"/>
+                    <span>元宝价</span>
+                    <span>{{el.Price}}元/{{el.Unit}}</span>
+                    <span style="text-decoration: line-through;color: #B3B3B3;margin-left: 6px;">{{el.PricePrimary}}元/{{el.Unit}}</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 购买须知-->
+    <!--<div class="mi-block">-->
+        <!--<div class="mi-block-title" ms-click="toggleNotice">-->
+            <!--<i class="icon-angle-down pull-right icon-2x"></i>-->
+            <!--购买须知-->
+        <!--</div>-->
+        <!--<ul class="mi-list" ms-visible="showNotice">-->
+            <!--<li ms-repeat="info.Notice">-->
+                <!--<span class="dot"></span>-->
+                <!--{{el.Content}}-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <!-- 服务条款-->
+    <div class="mi-block">
+        <div class="mi-block-title" ms-click="toggleTips">
+            <i class="icon-angle-down pull-right icon-2x"></i>
+            服务条款
+        </div>
+        <ul class="mi-list" ms-visible="showTips">
+            <li ms-repeat="tips">
+                <span class="dot"></span>
+                {{el}}
+            </li>
+        </ul>
+    </div>
+
+    <!-- 购买按钮-->
+    <div class="mi-footer" ms-class="mi-footer-in:checkedGoods.length>0">
+        <button class="mi-pay" ms-click="buy" ms-if="buying==0">立即购买</button>
+        <button class="mi-pay" ms-if="buying!=0">购买中……</button>
+        <div>
+            <img src="./src/images/mall/yuanbao-black.png" alt="" style="height: 22px;margin-top: -5px;"/>
+            {{checkedTotal}}
+        </div>
+    </div>
+    <tsy:malert config="$alert2"></tsy:malert>
+
+</div>

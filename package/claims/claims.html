@@ -1,0 +1,76 @@
+<div ms-controller="claims">
+    <div class="c-title">
+        申请理赔
+        <div class=" c-exp" onclick="claimsAlert3.appear()">
+            流程
+        </div>
+    </div>
+    <div class="c-main">
+        <a href="#!/claimsAdd/0" class="btn-claims login-btn">在线理赔</a>
+
+        <div class="c-upload">
+            <i class="icon-file icon-large"></i> 理赔记录
+        </div>
+
+        <h3 class="text-center" ms-if="list.length==0">
+            暂无记录……
+        </h3>
+
+        <div class="c-list">
+
+            <a  ms-repeat="list" ms-attr-href="'#!/claimsInfo/'+el.IndemnifyID">
+                <div class="c-list-i"  ms-class="cli-{{el.IndemnifyState}}">
+                    <div class="pull-right c-state text-center"  >
+                        <div ms-if="el.IndemnifyState==1">
+                            <i class="icon-ok-sign icon-4x" style="color:#73d00f"></i>
+                            <br/>
+                            <span>已确认</span>
+                        </div>
+
+                        <div ms-if="el.IndemnifyState==0">
+                            <i class=" icon-question-sign icon-4x" style="color:#fad530"></i>
+                            <br/>
+                            <span>待确认</span>
+                        </div>
+
+                        <div ms-if="el.IndemnifyState==2">
+                            <i class=" icon-exclamation-sign icon-4x" style="color:#b8b8b8"></i>
+                            <br/>
+                            <span>驳回</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="cli-info">
+
+                        <i class="icon-ambulance"></i>&nbsp;&nbsp;
+                        {{el.CarID}}
+                        <br/>
+                        <i class=" icon-time"></i>&nbsp;&nbsp;
+                    <span ms-if="el.IndemnifyState!=1">
+                        {{el.CommitTime*1000|date('yyyy-MM-dd HH:mm')}}
+                    </span>
+                     <span ms-if="el.IndemnifyState==1">
+                        {{el.ExaminePassTime*1000|date('yyyy-MM-dd')}}
+                    </span>
+
+
+                    </div>
+                </div>
+
+
+            </a>
+
+        </div>
+        <br/>
+        <button class="btn btn-default btn-block" ms-click="getClaims" ms-if="T>(P*N)">加载更多</button>
+
+    </div>
+
+
+    <tsy:malert config="$alert"></tsy:malert>
+    <tsy:malert config="$alert2"></tsy:malert>
+    <tsy:malert config="$alert3"></tsy:malert>
+
+</div>

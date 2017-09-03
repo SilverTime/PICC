@@ -1,0 +1,103 @@
+<!--商家列表-->
+
+<div ms-controller="mallList">
+
+<div class="row">
+    <div class="col-md-2">
+        <br/>
+        <a class="btn btn-block btn-danger" type="button" value="新增商家" href='#!/newMerchant/0'>新增商家</a>
+    </div>
+</div>
+    <br/>
+    <div class="row">
+        <div class="col-md-5">
+            <div>
+                商户名称
+            </div>
+            <input type="text" class="form-control" ms-duplex="W.SellerName">
+            <br/>
+        </div>
+        <div class="col-md-7">
+            <div>
+                加入时间
+            </div>
+            <input type="date" class="form-control pull-left" style="width: auto" ms-duplex="time1"/>
+
+            <div class="pull-left" style="line-height: 33px">&nbsp;&nbsp;至&nbsp;&nbsp;</div>
+            <input type="date" class="form-control " style="width: auto" ms-duplex="time2"/>
+            <br class="clearfix"/>
+        </div>
+        <!--<div class="col-md-4">-->
+            <!--<br/>-->
+            <!--<a class="btn btn-block btn-danger" type="button" href="#!/mallList/1">-->
+                <!--搜索-->
+            <!--</a>-->
+        <!--</div>-->
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                类型
+            </div>
+            <tsy:select config="$opt1"></tsy:select>
+            <br/>
+            <br/>
+        </div>
+        <div class="col-md-9">
+            <div>
+                地区
+            </div>
+            <tsy:select config="$opt2"></tsy:select>
+            <br/>
+            <br/>
+        </div>
+
+    </div>
+
+    <!--商户表格-->
+    <div class="row active claimscss1">
+        <!--<div class="col-md-1"style="visibility:hidden">col-md-1</div>-->
+        <div>
+            <table class="table table-striped t1">
+                <thead>
+                <tr>
+                    <th>商户名称</th>
+                    <th>商户类型</th>
+                    <th>状态</th>
+                    <!--<th>添加人</th>-->
+                    <!--<th>添加时间</th>-->
+                    <th></th>
+                    <th>操作</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ms-repeat="list">
+                    <td>{{el.SellerName}}</td>
+                    <td>
+                        <span ms-if="el.SellerTypeID==1">加油</span>
+                        <span ms-if="el.SellerTypeID==2">洗车</span>
+                        <span ms-if="el.SellerTypeID==3">特惠</span>
+                    </td>
+                    <td>
+                        <span ms-if="el.SellerState==0">禁用</span>
+                        <span ms-if="el.SellerState==1">启用</span>
+                    </td>
+                    <!--<td>{{el.AddPeopleID}}</td>-->
+                    <!--<td>{{el.CreateDate}}</td>-->
+                    <td><a ms-attr-href="'#!/merchantInfo/'+el.SellerID">商家信息</a></td>
+
+                    <td>
+                        <a style="color: #ff2d3b;" ms-if="el.SellerState==0"
+                           ms-click="sellerStateChange(el.SellerID,1)">启用</a>
+                        <a style="color: orange;" ms-if="el.SellerState==1" ms-click="sellerStateChange(el.SellerID,0)">禁用</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <tsy:pager config="$opt"></tsy:pager>
+    </div>
+</div>

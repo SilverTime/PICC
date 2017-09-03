@@ -1,0 +1,20 @@
+<div class="con_1" ms-controller="delectAccount">
+    <div class=" box-border" style="padding: 30px;width:440px;">
+        <span style="margin-left: 129px;font-size: 28px;margin-top: -10px">
+            删除账号
+        </span>
+        <br/><br/>
+        <span class="text-span" style="color:#e8380e;display: block;">
+            删除后
+            <span>&nbsp;{{list.UserName}}&nbsp;</span>
+            的账号与相关数据将不可恢复
+        </span>
+        <br />
+        <button style="width: 120px; margin-right: 18px;margin-left: 48px;" class="btn btn-danger" ms-click="delAccount()">
+            确定
+        </button>
+        <button ms-click="cancelFun()" style="width: 120px;" class="btn btn-danger">
+            取消
+        </button>
+    </div>
+</div>

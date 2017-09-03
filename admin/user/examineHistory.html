@@ -1,0 +1,85 @@
+<div ms-controller="examineHistory">
+    <div class="row mallCss1">
+        <div class="col-md-3">
+            商户名称 <input type="text" class="nameInput">
+        </div>
+        <span class="mallCss3">添加时间</span>
+        <div class="col-md-4">
+            <input type="text" class="timeInput"> - <input type="text" class="timeInput">
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <!--状态选择-->
+    <div class="row mallCss2">
+        <span class="mallCss3">状态</span>
+        <div class="col-md-11">
+            <div class="btn-group btn-group-xs" role="group" aria-label="选择状态">
+                <button type="button" class="btn btn-default">启用</button>
+                <button type="button" class="btn btn-default">禁用</button>
+            </div>
+        </div>
+    </div>
+    <!--商家类型选择-->
+    <div class="row mallCss2">
+        <span class="mallCss3">商家类型</span>
+        <div class="col-md-11">
+            <div class="btn-group btn-group-xs" role="group" aria-label="选择商家">
+                <button type="button" class="btn btn-default">全部</button>
+                <button type="button" class="btn btn-default">加油</button>
+                <button type="button" class="btn btn-default">洗车</button>
+                <button type="button" class="btn btn-default">特惠活动</button>
+            </div>
+        </div>
+    </div>
+    <!--所属区域选择-->
+    <div class="row mallCss2">
+        <span class="mallCss3">所属区域</span>
+        <div class="col-md-11">
+            <div class="btn-group btn-group-xs" role="group" aria-label="选择所属区域">
+                <button type="button" class="btn btn-default">全部</button>
+                <button type="button" class="btn btn-default">涪城</button>
+                <button type="button" class="btn btn-default">安县</button>
+                <button type="button" class="btn btn-default">盐亭</button>
+                <button type="button" class="btn btn-default">游仙</button>
+                <button type="button" class="btn btn-default">北川</button>
+                <button type="button" class="btn btn-default">江油</button>
+                <button type="button" class="btn btn-default">高新</button>
+                <button type="button" class="btn btn-default">平武</button>
+                <button type="button" class="btn btn-default">科创园区</button>
+                <button type="button" class="btn btn-default">经开区</button>
+                <button type="button" class="btn btn-default">梓潼</button>
+                <button type="button" class="btn btn-default">科学城</button>
+                <button type="button" class="btn btn-default">三台</button>
+            </div>
+        </div>
+    </div>
+
+    <!--审核历史详情表格-->
+    <div class="row active">
+        <!--<div class="col-md-1"style="visibility:hidden">col-md-1</div>-->
+        <div class="col-md-10">
+            <table class="table table-striped t1">
+                <thead>
+                <tr>
+                    <th>商品名称</th>
+                    <th>商家名称</th>
+                    <th>创建时间</th>
+                    <th>状态</th>
+                    <th>审核人</th>
+                    <th>审核时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ms-repeat="list">
+                    <td>{{el.GoodsName}}</td>
+                    <td>{{el.SellerName}}</td>
+                    <td>{{el.CreateTime}}</td>
+                    <td>{{el.GoodsState}}</td>
+                    <td>{{el.}}</td>
+                    <td>{{el.}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

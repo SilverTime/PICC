@@ -1,0 +1,83 @@
+.container_vc {
+    width: 100%;
+    margin: 0
+}
+
+.vc-imgBox1 {
+    background: linear-gradient(90deg, #fa6f4c 0%, #f24820 100%);
+    /*background: #f35029;*/
+    width: 100%;
+    height: 190px;
+    text-align: center;
+}
+
+.vc-spanText {
+    color: #ffffff;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.vc-content {
+    padding: 20px;
+}
+
+.vc-input1 {
+    width: 100% !important;
+    height: 40px !important;
+    padding-right: 35px !important;
+}
+
+.vc-font1 {
+    font-size: 19px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.vc-font2 {
+    font-size: 12px;
+    float: right;
+    margin-top: 5px;
+    color: #cccccc;
+}
+
+.vc-font3 {
+    z-index: 1;
+    position: absolute;
+    left: 33px;
+    top: 252px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.vc-btn-0 {
+    width: 100%;
+    height: 38px;
+    margin-top: 10px;
+    font-size: 15px !important;
+}
+
+.vc-remove-1 {
+    position: absolute;
+    top: 254px;
+    right: 33px;
+    z-index: 1;
+    width: 110%
+}
+
+.vc-remove-2 {
+    position: absolute;
+    top: 342px;
+    right: 33px;
+    z-index: 1;
+    width: 110%
+}
+
+.vc-smileFace {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    height: 60px;
+    line-height: 30px;
+}

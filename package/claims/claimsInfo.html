@@ -1,0 +1,80 @@
+<div ms-controller="claimsInfo">
+
+    <div class="ci-block">
+        <div>
+            车牌号
+            <span class="pull-right">
+                {{info.CarID}}
+            </span>
+        </div>
+        <div>
+            状态
+            <span class="pull-right ci-state-1" ms-if="info.IndemnifyState==1">
+                已确认
+            </span>
+            <span class="pull-right ci-state-0" ms-if="info.IndemnifyState==0">
+                待确认
+            </span>
+            <span class="pull-right ci-state-2" ms-if="info.IndemnifyState==2">
+                被驳回
+            </span>
+        </div>
+    </div>
+
+    <div class="ci-addpic" ms-if="morePic.length>0">
+        <div ms-repeat="morePic">
+            <wx:addpic config="$opt"></wx:addpic>
+        </div>
+        <div class="ca-addmore" ms-click="addMore(1)">
+            +
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="ci-block">
+        <button class="login-btn" ms-click="addMore(3)"
+                ms-if="morePic.length==0">
+            补充图片
+        </button>
+        <button class="login-btn" ms-click="pushPics()"
+                ms-if="morePic.length>0"
+                ms-click="pushPics">
+            提交
+        </button>
+    </div>
+
+    <div class="ci-content">
+        <div class="ci-dot-line">
+            <div class="dot">
+
+            </div>
+            <div class="line">
+
+            </div>
+            <div class="dot">
+
+            </div>
+        </div>
+
+        <div class="ci-time">
+            提交申请
+            <br/>
+            提交时间：{{info.CommitTime*1000|date('yyyy年MM月dd日 HH:mm')}}
+            <br/>
+            <a ms-attr-href="#!/claimsPic/{{IndemnifyID}}">
+                提交记录
+            </a>
+        </div>
+        <div ms-if="info.IndemnifyState==1" class="ci-time">
+            工作人员审核
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span  style="color:#73d00f">
+                已确认
+            </span>
+            <br/>
+            提交时间：{{info.ExaminePassTime*1000|date('yyyy年MM月dd日 HH:mm')}}
+            <br/>
+        </div>
+    </div>
+
+</div>

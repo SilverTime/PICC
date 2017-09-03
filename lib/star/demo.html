@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>星级组件</title>
+    <script src="../../src/js/avalon.modern.1.5.min.js"></script>
+</head>
+<body ms-controller="starTest">
+
+<tsy:star ms-data-lv="4"></tsy:star>
+
+<tsy:star config="$opt"></tsy:star>
+
+</body>
+<script>
+    avalon.ready(function () {
+        require(['../../lib/star/star.js'], function () {
+            var vm=avalon.define({
+                $id:"starTest",
+                $opt:{
+                    id:"cStar",
+//                    lv:2,
+                    callback: function (i) {
+                        cStar.lv=i
+                        cStar.build()
+                    }
+                },
+
+            })
+            avalon.scan()
+        })
+    })
+</script>
+
+</html>

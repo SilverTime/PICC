@@ -1,0 +1,21 @@
+<div class="con_1" ms-controller="service">
+    <span class="sp_1">业务分类管理</span><img style="display:inline-block; width: 765px;" src="src/images/system/u20_line.png" />
+    <div style="margin-top: 2%">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>业务名称</th>
+                    <th>关键字</th>
+                    <th>指定客服名单</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tr ms-repeat="list">
+                    <td>{{el.WorkName}}</td>
+                    <td>{{el.KeyWord}}</td>
+                    <td>{{el.Connect}}</td>
+                    <td> <a ms-attr-href="'#!/serviceDone/'+el.WorkID" style="text-decoration: none;"> 修改</a></td>
+                </tr>
+                </table>
+        </div>
+</div>

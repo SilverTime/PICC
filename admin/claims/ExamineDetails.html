@@ -1,0 +1,145 @@
+<div class="claimsAdd" ms-controller="ExamineDetails">
+
+    <br/>
+    <h4>
+        理赔编号：{{info.IndemnifyID}}
+    </h4>
+    <div class="row">
+        <div class="col-sm-4">
+            申请人：{{info.Name}}
+        </div>
+        <div class="col-sm-4">
+            联系方式：{{info.Phone}}
+        </div>
+        <div class="col-sm-4">
+            车牌号码：{{info.CarID}}
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            当前状态：
+            <span ms-if="info.IndemnifyState==0">未审核</span>
+            <span ms-if="info.IndemnifyState==1">已通过</span>
+            <span ms-if="info.IndemnifyState==2">被驳回</span>
+        </div>
+        <div class="col-sm-4" ms-if="info.CommitTime>0">
+            申请时间：{{info.CommitTime*1000|date("yyyy-MM-dd HH:mm:ss")}}
+        </div>
+        <div class="col-sm-4" ms-if="info.ExaminePassTime>0">
+            审核时间：{{info.ExaminePassTime*1000|date("yyyy-MM-dd HH:mm:ss")}}
+        </div>
+    </div>
+    <div>
+        地点：{{address}}
+        <span class="pull-right">({{info.Latitude}},{{info.Longitude}})</span>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="填写短信内容" ms-duplex="smsContent"/>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-danger btn-block" ms-click="sms">发送通知短信</button>
+        </div>
+    </div>
+
+    <!-- 现场照片详情-->
+    <div style="border: 5px solid #F4F5F9;margin-top: 28px;">
+        <div >
+            <div class="ca-block ca-title">
+                <i class="icon-th-large" style="color: #b5b5b5"></i> 现场照片详情
+            </div>
+
+            <div class="ca-block" ms-repeat="scenePic">
+                <div class="ca-sub">
+                    <!--<i class="icon-question-sign icon-2x pull-right" style="color: #f0481e"></i>-->
+                    {{el.title}}
+                    <br/>
+
+                </div>
+
+                <a ms-attr-href="al.Url" target="_blank" ms-repeat-al="el.pics">
+                    <img ms-attr-src="al.Url" alt=""  style="margin:5px;max-height: 100px"/>
+                </a>
+
+
+                <div style="clear: both">
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 证件照片详情-->
+        <div >
+            <div class="ca-block ca-title">
+                <i class="icon-th-large" style="color: #b5b5b5"></i>
+                证件照片详情
+            </div>
+
+            <div class="ca-block" ms-repeat="cardPic">
+                <div class="ca-sub">
+                    <!--<i class="icon-question-sign icon-2x pull-right" style="color: #f0481e"></i>-->
+                    {{el.title}}
+                    <br/>
+
+                </div>
+
+
+                <a ms-attr-href="al.Url" target="_blank" ms-repeat-al="el.pics">
+                    <img ms-attr-src="al.Url" alt=""  style="margin:5px;max-height: 100px"/>
+                </a>
+
+                <div style="clear: both">
+
+                </div>
+            </div>
+            <!--<div style="padding: 12px">-->
+            <!--<button class="login-btn" ms-click="commit"-->
+            <!--style="width: 100%;padding: 6px;border-radius: 4px;">-->
+            <!--提交-->
+            <!--</button>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+
+    <br/>
+     备注
+    <div class="row">
+        <div class="col-sm-12" ms-repeat="info.Comment">
+            <div class="panel panel-default panel-body">
+                <div class="pull-right" style="color:#aaaaaa">
+                    <br/>{{el.Commenter}}{{el.CommentTime*1000|date("yyyy年MM月dd日 HH:mm:ss")}}&nbsp;
+                    <i class="icon-remove-sign" style="cursor: pointer;color:#000" ms-click="delCommit(el.CommentID)"></i>
+                </div>
+                {{el.Comment}}
+            </div>
+
+        </div>
+        <div class="col-sm-10">
+            <textarea class="form-control" style="resize: none;"  rows="2" ms-duplex="commit" placeholder="填写备注信息"></textarea>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-block btn-default" ms-click="addCommit">添加备注</button>
+        </div>
+    </div>
+    <br/>
+
+    <div class="row" ms-if="info.IndemnifyState==0">
+        <div class="col-sm-10">
+            <button class="btn btn-block btn-danger" ms-click="conDetails(1)">通过审核</button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-block btn-default"  ms-click="conDetails(2)">删除申请</button>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+
+</div>

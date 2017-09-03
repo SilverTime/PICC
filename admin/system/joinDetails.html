@@ -1,0 +1,28 @@
+<div class="con_1" ms-controller="joinDetails">
+    <div style="text-align:center">
+        <h3>{{info.ActivityName}}</h3>
+        <a><h4 ms-click="Export()">导出EXCEL</h4></a>
+    </div>
+    <table id="" class="table table-striped">
+        <thead>
+        <tr>
+            <th>手机号</th>
+            <th>报名时间</th>
+            <th>微信号</th>
+            <th>姓名</th>
+            <th>星级</th>
+            <th>保费</th>
+        </tr>
+        </thead>
+        <tbody id="myTbody">
+        <tr ms-repeat="list">
+            <td>{{el[1]}}</td>
+            <td>{{el[5]}}</td>
+            <td>{{el[3]}}</td>
+            <td>{{el[0]}}</td>
+            <td>{{el[4]}}</td>
+            <td>{{el[2]}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

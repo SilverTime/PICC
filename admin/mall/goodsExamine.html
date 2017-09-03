@@ -1,0 +1,76 @@
+<!--商品审核-->
+<DIV  ms-controller="goodsExamine">
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                商户名称
+            </div>
+            <input type="text" class="form-control">
+            <br/>
+        </div>
+        <div class="col-sm-8">
+            <div>
+                起止时间
+            </div>
+            <input type="date" class="form-control pull-left" style="width: auto"/>
+            <div class="pull-left" style="line-height: 33px">&nbsp;&nbsp;至&nbsp;&nbsp;</div>
+            <input type="date" class="form-control " style="width: auto"/>
+            <br class="clearfix"/>
+        </div>
+        <div class="col-md-3">
+            <div>
+                类型
+            </div>
+            <tsy:select config="$opt1"></tsy:select>
+            <br/>
+            <br/>
+        </div>
+        <div class="col-md-9">
+            <div>
+                地区
+            </div>
+            <tsy:select config="$opt2"></tsy:select>
+            <br/>
+            <br/>
+        </div>
+    </div>
+
+
+    <!--商品审核表格-->
+    <div class="row active mallCss1" >
+        <div>
+            <table class="table table-striped t1">
+                <thead>
+                <tr>
+                    <th>商品名称</th>
+                    <th>商家名称</th>
+                    <th>商家类型</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ms-repeat="list">
+                    <td>{{el.GoodsName}}</td>
+                    <td>{{el.Seller.SellerName}}</td>
+                    <td>
+                        <span ms-if="el.Seller.SellerTypeID==1">加油</span>
+                        <span ms-if="el.Seller.SellerTypeID==2">洗车</span>
+                        <span ms-if="el.Seller.SellerTypeID==3">特惠</span>
+                    </td>
+                    <td>{{el.CreateDate}}</td>
+                    <td>
+                        <a ms-attr-href="'#!/goodsExamineDetail/'+el.GoodsID">详情</a>
+                        <a ms-click="pass(el.GoodsID,el.Seller.SellerID,1)">通过</a>
+                        <a ms-click="pass(el.GoodsID,el.Seller.SellerID,1)">驳回</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <tsy:pager config="$opt"></tsy:pager>
+    </div>
+</DIV>
+

@@ -1,0 +1,13 @@
+<!--商品审核详情-->
+<div class="goodsExamineDetail" ms-controller="goodsExamineDetail">
+    <div style="margin-left: 15%;"><span style="font-size: 1.4em;">商品审核</span></div><br/>
+    <span>商家名称：</span><span>中石油涪城区加油站</span><br/>
+    <span>商品名：</span><span>{{info.GoodsName}}</span><br/>
+    <span>总数量：</span><span>{{info.Total}}</span><br/>
+    <span>价格：</span><span>{{info.Price}}</span>龙宝/个<br/>
+    <span>原价：</span><span>{{info.SaleMoney}}</span>人民币<br/>
+    <span>有效期：</span><span>{{info.EffectTime}}至{{info.OverdueTime}}</span><br/>
+    <span>单个用户最大购买个数上限：</span><span>{{info.BuyMax}}</span><br/><br/>
+    <input type="button" name="return" value="通过" class="passBtn1" ms-click="pass(1)"/>
+    <input type="button" name="return" value="不通过" class="noPassBtn1" ms-click="pass(0)"/>
+</div>

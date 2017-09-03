@@ -1,0 +1,68 @@
+<div class="claimsAdd" ms-controller="claimsPic">
+    <!-- 现场照片详情-->
+    <div ms-if="showing==0" >
+        <div class="ca-block ca-title">
+            <i class="icon-th-large" style="color: #b5b5b5"></i> 现场照片详情
+        </div>
+
+        <div class="ca-block" ms-repeat="scenePic">
+            <div class="ca-sub">
+                <!--<i class="icon-question-sign icon-2x pull-right" style="color: #f0481e"></i>-->
+                {{el.title}}
+                <br/>
+
+            </div>
+
+
+            <img ms-attr-src="al.Url" alt="" ms-repeat-al="el.pics" style="margin:5px;max-height: 100px"/>
+
+            <div style="clear: both">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div style="padding: 12px">
+        <button ms-visible="showing==0" ms-click="toggleShow(1)"
+                class="login-btn" style="width: 100%;padding: 6px;border-radius: 4px;">
+            证件照片详情
+        </button>
+        <button ms-visible="showing==1" ms-click="toggleShow(0)"
+                class="login-btn" style="width: 100%;padding: 6px;border-radius: 4px;">
+            现场照片详情
+        </button>
+    </div>
+
+
+    <!-- 证件照片详情-->
+    <div ms-if="showing==1">
+        <div class="ca-block ca-title">
+            <i class="icon-th-large" style="color: #b5b5b5"></i>
+            证件照片详情
+        </div>
+
+        <div class="ca-block" ms-repeat="cardPic">
+            <div class="ca-sub">
+                <!--<i class="icon-question-sign icon-2x pull-right" style="color: #f0481e"></i>-->
+                {{el.title}}
+                <br/>
+
+            </div>
+
+
+            <img ms-attr-src="al.Url" alt="" ms-repeat-al="el.pics" style="margin:5px;max-height: 100px"/>
+
+            <div style="clear: both">
+
+            </div>
+        </div>
+        <!--<div style="padding: 12px">-->
+            <!--<button class="login-btn" ms-click="commit"-->
+                    <!--style="width: 100%;padding: 6px;border-radius: 4px;">-->
+                <!--提交-->
+            <!--</button>-->
+        <!--</div>-->
+
+    </div>
+</div>

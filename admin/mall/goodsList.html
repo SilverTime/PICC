@@ -1,0 +1,96 @@
+<!--商品列表-->
+<div class="goodsList1" ms-controller="goodsList">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-3"><h1 class="title1">中石油加油站</h1></div>
+        <div class="col-md-5 linkCss1">
+            <img src="./src/images/mallList/u42.png" class="icon1"/><span><a>商家详情</a>&nbsp&nbsp</span>
+            <img src="./src/images/mallList/u42.png" class="icon1"/><span><a href="#!/QRCode/0">商家二维码</a>&nbsp&nbsp</span>
+            <img src="./src/images/mallList/u42.png" class="icon1"/><span><a href="#!/giftHistory/0">赠送历史</a></span></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped t1">
+                <thead>
+                <tr>
+                    <th>商户名称</th>
+                    <th>开始时间</th>
+                    <th>结束时间</th>
+                    <th>已售元宝</th>
+                    <th>原价金额</th>
+                    <th>已售出数量</th>
+                    <th>状态</th>
+                    <th></th>
+                    <th>操作</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ms-repeat-el="list">
+                    <td>{{el.GoodsName}}</td>
+                    <td>{{el.CreateTime}}</td>
+                    <td>{{el.EndTime}}</td>
+                    <td>{{el.SaleMoney}}</td>
+                    <td>{{el.PricePrimary}}</td>
+                    <td>{{el.SaleCount}}</td>
+                    <td>{{el.GoodsState}}</td>
+                    <td><a href="#!/goodsDetail/0">商品详情</a></td>
+                    <td><a href="#!/orderDetails/0">订单详情</a></td>
+                    <td><a href="#!/giftManagement/0">赠送管理</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <tsy:paper config="$opt"></tsy:paper>
+</div>
+
+<!--商品列表（已禁用）-->
+<!--<div class="goodsList1" style="display: none;">-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-4"></div>-->
+        <!--<div class="col-md-3"><h1 class="title1">中石油加油站</h1></div>-->
+        <!--<div class="col-md-5 linkCss1">-->
+            <!--<img src="./src/images/mallList/u42.png" class="icon1"/><span><a>商家详情</a>&nbsp&nbsp</span>-->
+            <!--<img src="./src/images/mallList/u42.png" class="icon1"/><span><a>商家二维码</a>&nbsp&nbsp</span>-->
+            <!--<img src="./src/images/mallList/u42.png" class="icon1"/><span><a>赠送历史</a></span>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-12" style="color: red;text-align: center"><span>该商家已禁用</span></div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+            <!--<table class="table table-striped t1">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>商户名称</th>-->
+                    <!--<th>开始时间</th>-->
+                    <!--<th>结束时间</th>-->
+                    <!--<th>已售元宝</th>-->
+                    <!--<th>原价金额</th>-->
+                    <!--<th>已售出数量</th>-->
+                    <!--<th>状态</th>-->
+                    <!--<th></th>-->
+                    <!--<th>操作</th>-->
+                    <!--<th></th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td>洗车</td>-->
+                    <!--<td>2015-10-10</td>-->
+                    <!--<td>2016-10-20</td>-->
+                    <!--<td>414元宝</td>-->
+                    <!--<td>¥131</td>-->
+                    <!--<td>5000</td>-->
+                    <!--<td>已结束</td>-->
+                    <!--<td><a href="#!/goodsDetail/0">商品详情</a></td>-->
+                    <!--<td><a href="#!/orderDetails/0">订单详情</a></td>-->
+                    <!--<td><a href="#!/giftManagement/0">赠送管理</a></td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

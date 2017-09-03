@@ -1,0 +1,32 @@
+<div class="" ms-controller="changeActor">
+    <h2 class="text-center">修改角色</h2>
+    <hr/>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="text-span">员工姓名：{{info.UserName}}</div>
+            <br/>
+            <div class="text-span">联系电话：{{info.Phone}}</div>
+            <br/>
+            角色：
+            <select class="form-control" id="" ms-duplex="info.Role">
+                <option value="">选择角色</option>
+                <option ms-attr-value="$key" ms-repeat="Roles">{{$val}}</option>
+            </select>
+            <br/>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class=" col-sm-3 col-sm-offset-3">
+            <button  class="btn btn-danger btn-block" ms-click="changeRole">
+                确定
+            </button>
+        </div>
+        <div class="col-sm-3">
+
+            <a href="#!/members/0" class="btn btn-default btn-block">
+                取消
+            </a>
+        </div>
+    </div>
+</div>

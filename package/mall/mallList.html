@@ -1,0 +1,97 @@
+<div ms-controller="mallList"><!--body-->
+
+   <div class="mall-select" style="position: fixed;width: 100%">
+
+
+           <div style="background-color: #323232;color: #ffffff;text-align: center;padding:10px 15px" class="row">
+               <div class="col-xs-8">
+                   <input  type="text" class="ml-search" ms-duplex="keyword" style="padding-left: 30px"/>
+                   <i class="icon-search icon-large" style="position: absolute;left: 18px;top: 6px;opacity: 0.5"></i>
+                   <i class=" icon-remove-sign icon-large" style="position: absolute;right: 18px;top: 6px;"
+                           ms-visible="keyword!=''" onclick="mallList.keyword=''"></i>
+               </div>
+               <div class="col-xs-4">
+                   <button class="btn btn-sm btn-danger btn-block" ms-click="BusinessFind">搜索</button>
+               </div>
+
+           </div>
+
+
+       <div class="mall-s-item pull-left" ms-click="toggleBusinessType()">
+           <img ms-attr-src="select.bt.icon" alt=""/>
+           <span>
+               {{select.bt.name}}
+           </span>
+           <i class="icon-angle-down " ms-visible="!showMoreBT"></i>
+           <i class="icon-angle-up " ms-visible="showMoreBT"></i>
+       </div>
+       <div class="mall-s-item pull-left" ms-click="toggleArea()">
+           <span>
+               {{select.a}}
+           </span>
+           <i class="icon-angle-down " ms-visible="!showMoreArea"></i>
+           <i class="icon-angle-up " ms-visible="showMoreArea"></i>
+       </div>
+       <div >
+           <div class="mall-s-panel" ms-visible="showMoreBT">
+               <div ms-repeat="businessType" ms-click="selectBT($index)">
+                   <!--<img ms-attr-src="el.icon" alt=""/>-->
+                   <span>
+                       {{el.name}}
+                   </span>
+               </div>
+           </div>
+           <div class="mall-s-panel pull-right" ms-visible="showMoreArea">
+               <div ms-repeat-el="area" ms-click="selectArea($index)">
+                   <span>
+                   {{el.name}}
+                    </span>
+               </div>
+
+           </div>
+       </div>
+
+   </div>
+
+    <!-- 商家列表-->
+    <div style="padding-top: 87px">
+        <a ms-attr-href="'#!/mallInfo/'+el.SellerID" ms-repeat="list" style="outline: none">
+            <div  class="seller-block">
+                <div class="pull-left seller-pic">
+                    <img ms-attr-src="el.Pic" alt="" style="height: 100%"/>
+                </div>
+                <div class="seller-info">
+                    <span>{{el.SellerName}}</span><br/>
+                    <span>服务星级</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="color:#f05027">
+                   <tsy:star ms-data-lv="el.SellerLevel"></tsy:star>
+                </span>
+                    <br/>
+                <span>
+                    <img ms-attr-src="businessType[el.SellerTypeID].icon" alt=""/>
+                    {{businessType[el.SellerTypeID].name}}
+                </span>
+                <span class="pull-right">
+                    {{area[el.AreaID]}}
+                </span>
+
+                </div>
+        </div>
+
+        </a>
+
+
+        <div style="padding:15px" ms-if="list.length<T">
+            <button ms-click="getBusiness" class="login-btn" ms-if="keyword==''">
+                加载更多
+                <small>(还有{{T-list.length}}条记录)</small>
+            </button>
+            <button ms-click="BusinessFind" class="login-btn" ms-if="keyword!=''">
+                加载更多
+                <small>(还有{{T-list.length}}条记录)</small>
+            </button>
+        </div>
+        <!--<button class="btn btn-block btn-default" ms-if="T>list.length" ms-click="getBusiness">更多</button>-->
+    </div>
+</div>

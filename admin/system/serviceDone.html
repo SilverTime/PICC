@@ -1,0 +1,46 @@
+<div class="con_1" ms-controller="serviceDone">
+    <div class=" box-border" style="padding: 30px;width:440px;">
+        <div style="text-align: center">
+            <h3 style="margin: 0">
+                {{info.WorkName}}
+            </h3>
+        </div>
+        <br/><br/>
+        &nbsp;&nbsp;<span class="text-span">业务名称：</span><span class="text-span">
+        {{info.WorkName}}
+    </span>
+        <br/><br/>
+        <span class="text-span" style="color: #e8380e;">
+            *
+        </span>
+        <span class="text-span">
+            关键字：
+        </span>
+        <input ms-duplex="keyWord" class="timeInput" type="text"/>
+        <br/><br/>
+        <span class="text-span" style="color: #e8380e;">
+            *
+        </span>
+        <span class="text-span">
+            客服名单：
+        </span>
+        <br/><br/>
+        <span ms-repeat="type" style="font-size: 20px;">
+            <input ms-click="Type($index)" type="checkbox" checked />
+            {{el}}&nbsp;&nbsp;
+        </span>
+        <span ms-repeat="otherType" style="font-size: 20px;">
+            <input ms-click="otherTypes($index)" type="checkbox" />
+            {{el.ConnectName}}&nbsp;&nbsp;
+        </span>
+        &nbsp;&nbsp;&nbsp;
+        <br/><br/>
+        <button style="width: 120px; margin-right: 18px;margin-left: 12px;" class="btn btn-danger"
+                ms-click="putChange()">
+            确定
+        </button>
+        <button ms-click="cancelFun()" style="width: 120px;" class="btn btn-danger">
+            取消
+        </button>
+    </div>
+</div>

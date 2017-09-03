@@ -1,0 +1,27 @@
+<div ms-visible="show" class="alert-bg" >
+    <div class="alert-box" ms-class="alert-in:show">
+        <div class="content">
+            <div ms-repeat="subtitle" class="header-text">
+                {{el|html}}
+            </div>
+            <div ms-repeat="extraTitle" class="extra-text">
+                {{el|html}}
+            </div>
+            <!--<br/>-->
+            <div class="alert-content">
+                {{content|html}}
+            </div>
+        </div>
+        <div class="btn-bg">
+            <span ms-repeat="btn">
+                <button ms-click="el.onClick" class="btn_alert">
+                    {{el.name}}
+                </button>
+                <span ms-if="!$last">
+                    |
+                </span>
+            </span>
+
+        </div>
+    </div>
+</div>

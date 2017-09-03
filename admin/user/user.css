@@ -1,0 +1,186 @@
+/*//////////////////////////会员审核样式表*/
+.mallCss2{
+    padding-left: 2.5%;
+    padding-top: 1%;
+}
+.mallCss3{
+    width: 8%;
+    float: left;
+}
+.t1{
+    font-size: 1.2em;
+}
+.user_btn1{
+    width: 200px;
+    height: 35px;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+    font-size: 1.4em;
+    float: left;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+/*////////////////////////会员审核历史样式表*/
+/*用户名输入框*/
+.nameInput{
+    width: 125px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+    margin-left: 3%;
+}
+/*时间输入框*/
+.timeInput{
+    width: 100px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+}
+.mallCss1{
+    padding-left: 1%;
+    padding-top: 2%;
+}
+.mallCss2{
+    padding-left: 2.5%;
+    padding-top: 1%;
+}
+.mallCss3{
+    width: 8%;
+    float: left;
+}
+
+/*////////////////////////////数据同步样式表*/
+.img1{
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+.update1{
+    padding-top: 4%;
+    padding-left: 3%;
+}
+.t2{
+    float: left;
+    color: red;
+    font-size: 1.3em;
+}
+.t3{
+    padding-left: 3%;
+    padding-top: 3%;
+    font-size: 1.3em;
+}
+
+/*////////////////////////////////////会员资料样式表*/
+.upInfo1{
+    padding-left: 2%;
+    padding-top: 1%;
+}
+.upInfo-t1{
+    font-size: 1.2em;
+}
+/*输入框*/
+.input1{
+    width: 85px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: gray;
+    margin-left: 1%;
+}
+.t4{
+    float: left;
+}
+.userBtn2{
+    margin-right: 3%;
+    margin-top: 1%;
+}
+/*//////////////////////////////////元宝管理样式表*/
+.t5{
+    font-size: 1.3em;
+}
+.t6{
+    font-size: 1.3em;
+    color: red;
+}
+.textArea{
+    width: 600px;
+    height: 200px;
+    color: grey;
+    font-size: 1.2em;
+    resize:none;
+    margin-top: 1%;
+}
+.user_btn3{
+    height: 40px;
+    background-color: #436999;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.2em;
+    float: left;
+    margin-left: 3%;
+    padding-left: 40px;
+    padding-right: 40px;
+    line-height: 40px;
+}
+
+/*///////////////////////////////会员审核详情样式表*/
+.userDetails1{
+    margin-top: 3%;
+    margin-left: 2%;
+    font-size: 1.3em;
+}
+.row1{
+    margin-top: 2%;
+}
+.img2{
+    width: 80px;
+    height: 80px;
+}
+.hr{
+    height:1px;
+    border:none;
+    border-top:1px dashed black;
+}
+.t8{
+    border: 1px solid #777777;
+    color: #333333;
+    width: 230px;
+    padding: 1.5% 2%;
+    margin-left: 25%;
+}
+td.info{
+    width: 120px;
+    height: 30px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.passBtn{
+    width: 150px;
+    height: 40px;
+    background-color: #e8380e;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.noPassBtn{
+    width: 150px;
+    height: 40px;
+    background-color: #cbcbcb;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    color: white;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

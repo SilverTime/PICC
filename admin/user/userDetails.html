@@ -1,0 +1,172 @@
+<!--会员审核详情-->
+
+<!--已同步-->
+<br/>
+<div class="" ms-controller="userDetails">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            被保人：&nbsp;&nbsp;
+            <strong>
+                <span>{{info.Name}}</span>
+            </strong>
+            (<span ms-if="info.Sex==1">先生</span><span ms-if="info.Sex==2">女士</span>)
+        </div>
+        <div class="panel-body">
+            <div class="col-md-6">
+                身份证号：&nbsp;&nbsp;<span>{{info.IDCard}}</span><br/>
+                微信手机号：&nbsp;&nbsp;<span>{{info.WeChatPhone}}</span><br/>
+                系统手机号：&nbsp;&nbsp;<span>{{info.Phone}}</span><br/>
+            </div>
+            <div class="col-md-6">
+                地址：&nbsp;&nbsp;<span>{{info.Address}}</span><br/>
+                会员等级：&nbsp;&nbsp;<span>{{info.UserLevel}}</span><br/>
+                龙宝数：&nbsp;&nbsp;<span>{{info.BalanceMoney}}</span>
+            </div>
+        </div>
+
+    </div>
+
+    <strong>
+        承保信息
+    </strong>
+    <hr/>
+    <div class="panel panel-default" ms-repeat="info.Car">
+        <div class="panel-heading">
+            保单号：&nbsp;&nbsp;<span>{{el.PolicyID}}</span>
+            <span class="badge pull-right">
+                {{UserStateValue[info.UserState]}}
+            </span>
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <td>
+                        车牌号码
+                    </td>
+                    <td>
+                        车辆名称
+                    </td>
+                    <td>
+                        VIN码
+                    </td>
+                    <td>
+                        新车购置价格
+                    </td>
+                    <td>
+                        购置日期
+                    </td>
+                    <td>
+                        实际使用
+                    </td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        {{el.CarID}}
+                    </td>
+                    <td>
+                        {{el.CarName}}
+                    </td>
+                    <td>
+                        {{el.VIN}}
+                    </td>
+                    <td>
+                        {{el.CarPrice}}&nbsp;元
+                    </td>
+                    <td>
+                        {{el.UsestartTime*1000|date("yyyy年MM月dd日")}}
+                    </td>
+                    <td>
+                        {{Math.floor(((new Date().getTime())-(el.UsestartTime*1000))/1000/60/60/24/365)}}&nbsp;年
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    承保信息
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            保单号：&nbsp;&nbsp;<span>{{el.PolicyID}}</span><br/>
+                            承保商业险金额：&nbsp;&nbsp;<span>{{el.BusinessMoney}}</span><br/>
+                            推荐送修代码：&nbsp;&nbsp;<span>{{el.RepairCode}}</span><br/>
+                        </div>
+                        <div class="col-md-6">
+                            归属机构：&nbsp;&nbsp;<span>{{el.Ownership}}</span><br/>
+                            商业险起保日期：&nbsp;&nbsp;<span>{{el.BusinessStart*1000|date("yyyy年MM月dd日")}}</span><br/>
+                            承保保额：&nbsp;&nbsp;<span>{{el.AcceptInsurMoney}}元</span><br/>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    理赔信息
+                </div>
+                <div class="panel-body">
+                    <div class="row ">
+                        <div class="col-md-4">
+                            商业险上年赔款<span>{{el.LastClaimsCount}}</span>次
+                        </div>
+                        <div class="col-md-4">
+                            连续<span>{{el.NoInsurTime}}</span>年未出险
+                        </div>
+                        <div class="col-md-4">
+                            商业险本年赔款<span>{{el.ThisClaimsCount}}</span>次
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            微信资料
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div>
+                        微信昵称：&nbsp;{{info.WechatNickName}}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        微信号：&nbsp;{{info.Wechatid}}
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        OpenId：&nbsp;{{info.OpenID}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="row row1" ms-if="info.UserState!=3">
+        <input type="button" name="new" value="通过" class="passBtn" ms-click="judge(1)"/>
+        <input type="button" name="new" value="不通过" class="noPassBtn" ms-click="judge(2)"/>
+    </div>
+</div>
